@@ -1,2 +1,2 @@
-# Spring Boot In Practice
-Spring Boot In Practice Book
+# Chapter 01
+Spring Boot In Practice Book Chapter01
