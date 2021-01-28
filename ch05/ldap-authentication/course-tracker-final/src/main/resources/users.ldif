@@ -1,0 +1,30 @@
+dn: dc=manning,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: manning
+
+dn: ou=people,dc=manning,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=steve,ou=people,dc=manning,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Steve Smith
+sn: Smith
+uid: steve
+userPassword: password
+
+dn: uid=jsocket,ou=people,dc=manning,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: John Socket
+sn: Socket
+uid: jsocket
+userPassword: password
