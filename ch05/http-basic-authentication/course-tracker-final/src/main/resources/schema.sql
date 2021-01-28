@@ -6,10 +6,7 @@ CREATE TABLE courses (
   name        VARCHAR(255),
   rating      INTEGER NOT NULL,
   PRIMARY KEY (id)
-) engine=innodb;
-
-DROP TABLE IF EXISTS authorities;
-DROP TABLE IF EXISTS users;
+);
 
 create table users(
     username varchar(50) not null primary key,
