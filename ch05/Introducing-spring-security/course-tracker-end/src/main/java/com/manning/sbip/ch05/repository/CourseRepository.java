@@ -1,6 +1,6 @@
-package com.manning.sbip.ch04.repository;
+package com.manning.sbip.ch05.repository;
 
-import com.manning.sbip.ch04.model.Course;
+import com.manning.sbip.ch05.model.Course;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

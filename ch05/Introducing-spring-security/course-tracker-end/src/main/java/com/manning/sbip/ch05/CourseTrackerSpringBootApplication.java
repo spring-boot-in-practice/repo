@@ -1,4 +1,4 @@
-package com.manning.sbip.ch04;
+package com.manning.sbip.ch05;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

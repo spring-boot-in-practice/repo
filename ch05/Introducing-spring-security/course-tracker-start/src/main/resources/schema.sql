@@ -6,4 +6,4 @@ CREATE TABLE courses (
   name        VARCHAR(255),
   rating      INTEGER NOT NULL,
   PRIMARY KEY (id)
-) engine=innodb;
+);

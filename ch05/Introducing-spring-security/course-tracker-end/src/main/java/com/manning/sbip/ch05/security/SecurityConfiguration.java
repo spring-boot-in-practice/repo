@@ -1,4 +1,4 @@
-package com.manning.sbip.ch04.security;
+package com.manning.sbip.ch05.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,7 +12,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/login").permitAll()
-                .anyRequest().authenticated().and().formLogin().loginPage("/login");
+                .anyRequest().authenticated()
+                .and()
+                .formLogin().loginPage("/login");
     }
 
     @Override

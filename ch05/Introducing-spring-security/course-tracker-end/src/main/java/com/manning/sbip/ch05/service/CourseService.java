@@ -1,6 +1,6 @@
-package com.manning.sbip.ch04.service;
+package com.manning.sbip.ch05.service;
 
-import com.manning.sbip.ch04.model.Course;
+import com.manning.sbip.ch05.model.Course;
 
 import java.util.Optional;
 

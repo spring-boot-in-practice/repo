@@ -1,7 +1,7 @@
-package com.manning.sbip.ch04.service;
+package com.manning.sbip.ch05.service;
 
-import com.manning.sbip.ch04.model.Course;
-import com.manning.sbip.ch04.repository.CourseRepository;
+import com.manning.sbip.ch05.model.Course;
+import com.manning.sbip.ch05.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
