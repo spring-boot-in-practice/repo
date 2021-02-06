@@ -9,13 +9,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Configuration
+//@Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
+        http.authorizeRequests()
                 .antMatchers("/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -23,22 +22,26 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .ldapAuthentication()
-                .userDnPatterns("uid={0},ou=people")
-                .contextSource()
-                .url("ldap://localhost:8389/dc=manning,dc=com")
-                .and()
-                .passwordCompare()
-                .passwordEncoder(NoOpPasswordEncoder.getInstance())
-                .passwordAttribute("userPassword");
-    }
-
-    @Override
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/webjars/**", "/images/*", "/css/*", "/h2-console/**");
+                .antMatchers("/webjars/**", "/images/**", "/css/**", "/h2-console/**");
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("user")
+                .password("p@ssw0rd")
+                .roles("USER")
+                .and()
+                .withUser("admin")
+                .password("pa$$w0rd")
+                .roles("ADMIN");
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
     }
 }
