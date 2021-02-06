@@ -7,7 +7,10 @@ In this chapter, we introduce you to Spring Security. With an introduction to th
 We have demonstrated following techniques in this book:
 - Using Spring Security in a Spring Boot Project
 - Performing In-Memory Authetication in a Spring Boot Project
-- Performing JDBC Authetication in a Spring Boot Project
 - Performing In-Memory Authetication with cutsom tables in a Spring Boot Project
+- Using built-in JDBC Authetication in a Spring Boot Project
+- Using custom tables to perform JDBC Authetication in a Spring Boot Project
+- Using advanced features (account disable, locking) in JDBC Authetication in a Spring Boot Project
+- Performing LDAP Authetication in a Spring Boot Project
 - Performing HTTP Basic Authetication in a Spring Boot Project
 
