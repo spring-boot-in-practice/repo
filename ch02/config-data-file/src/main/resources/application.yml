@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    group:
+      "debug": "testa,testb"
+
+ 
