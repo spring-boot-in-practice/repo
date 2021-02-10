@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss.SSS} [%5p] [%15.15t] %-40.40c{1.} : %m%n%ex
+        </Property>
+    </Properties>
+    <Appenders>
+
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </Console>
+        <RollingFile name="FileAppender"
+        fileName="logs/application-log4j2.log"
+        filePattern="logs/application-log4j2-%d{yyyy-MM-dd}-%i.log">
+        <PatternLayout>
+            <Pattern>${LOG_PATTERN}</Pattern>
+        </PatternLayout>
+        <Policies>
+            <SizeBasedTriggeringPolicy size="10MB" />
+            <TimeBasedTriggeringPolicy interval="7" />
+        </Policies>
+        <DefaultRolloverStrategy max="10"/>
+    </RollingFile>
+</Appenders>
+<Loggers>
+<Logger name="com.manning.sbip" level="debug" additivity="false">
+    <AppenderRef ref="FileAppender"/>
+</Logger>
+<Logger name="org.springframework.boot" level="info" additivity="false">
+    <AppenderRef ref="ConsoleAppender"/>
+</Logger>
+<Root level="info">
+    <AppenderRef ref="FileAppender"/>
+    <AppenderRef ref="ConsoleAppender"/>
+</Root>
+</Loggers>
+</Configuration>
