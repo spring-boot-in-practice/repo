@@ -1,6 +1,5 @@
+server:
+  port: 8081
 spring:
   profiles:
-    group:
-      "debug": "testa,testb"
-
- 
+    active: test

@@ -1,0 +1,6 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    username: sa
+    password: password
