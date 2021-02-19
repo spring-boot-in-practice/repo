@@ -22,8 +22,13 @@ public class CourseTrackerApplication implements CommandLineRunner {
     }
 
     @Bean
-    public CommandLineRunner print() {
-        return args ->
-                logger.info("CourseTrackerApplication CommandLineRunner executed as a bean definition");
+    public CommandLineRunner commandLineRunner() {
+        return args -> {
+            logger.info("CommandLineRunner executed as a bean definition with "+args.length +" arguments");
+            for(int i=0; i<args.length;i++){
+                logger.info("Argument: "+args[i]);
+            }
+        };
+
     }
 }
