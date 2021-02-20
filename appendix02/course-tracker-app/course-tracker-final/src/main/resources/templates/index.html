@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Courses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+</head>
+<body>
+<div th:switch="${#lists.size(courses)}" class="container my-5">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div th:case="'0'">
+                <h2>You haven't added any course yet!</h2>
+                <p class="text-success">Add a course by clicking below!</p>
+            </div>
+            <div th:case="*">
+                <h2 class="my-5">Courses</h2>
+                <table class="table table-striped table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Course Category</th>
+                        <th>Course Rating</th>
+                        <th>Course Description</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="course : ${courses}">
+                        <td th:text="${course.name}"></td>
+                        <td th:text="${course.category}"></td>
+                        <td th:text="${course.rating}"></td>
+                        <td th:text="${course.description}"></td>
+                        <td><a th:href="@{/update/{id}(id=${course.id})}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
+                        <td>
+                            <form action="#" th:action="@{/delete/{id}(id=${course.id})}" th:method="delete">
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="my-5"><a href="/addcourse" class="btn btn-primary"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+</body>
+</html>
