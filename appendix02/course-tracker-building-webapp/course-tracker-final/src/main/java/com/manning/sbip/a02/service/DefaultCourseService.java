@@ -1,11 +1,10 @@
-package com.manning.sbip.ch02.service;
+package com.manning.sbip.a02.service;
 
-import com.manning.sbip.ch02.model.Course;
+import com.manning.sbip.a02.model.Course;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
 
 @Service
 public class DefaultCourseService implements CourseService {

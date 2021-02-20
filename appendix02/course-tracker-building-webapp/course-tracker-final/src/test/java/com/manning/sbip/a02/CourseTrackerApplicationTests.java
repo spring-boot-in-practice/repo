@@ -1,4 +1,4 @@
-package com.manning.sbip.ch02;
+package com.manning.sbip.a02;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

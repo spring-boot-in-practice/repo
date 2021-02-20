@@ -1,41 +1,39 @@
-package com.manning.sbip.ch02.model;
+package com.manning.sbip.a02.model;
 
-import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import java.util.HashSet;
-import java.util.Set;
+import javax.validation.constraints.*;
 
-@Entity(name = "COURSE")
-@Table(name = "COURSES")
 public class Course {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private int id;
+
+	@NotEmpty(message = "Course name field can't be empty")
 	private String name;
+
+	@NotEmpty(message = "Course category field can't be empty")
 	private String category;
 
 	@Min(value = 1)
 	@Max(value = 5)
 	private int rating;
-	private String description;
 
+	@NotEmpty(message = "Course description field can't be empty")
+	private String description;
 
 	public Course() {}
 
-	public Course(String name, String category, int rating, String description) {
+	public Course(int id, String name, String category, int rating, String description) {
+		this.id = id;
 		this.name = name;
 		this.category = category;
 		this.rating = rating;
 		this.description = description;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

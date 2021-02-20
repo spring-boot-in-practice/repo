@@ -1,8 +1,7 @@
-package com.manning.sbip.ch02.controller;
+package com.manning.sbip.a02.controller;
 
-import com.manning.sbip.ch02.model.Course;
-import com.manning.sbip.ch02.service.CourseService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.manning.sbip.a02.model.Course;
+import com.manning.sbip.a02.service.CourseService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

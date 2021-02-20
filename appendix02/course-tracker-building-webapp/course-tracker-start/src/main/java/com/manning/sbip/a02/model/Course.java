@@ -1,4 +1,4 @@
-package com.manning.sbip.ch02.model;
+package com.manning.sbip.a02.model;
 
 import javax.validation.constraints.*;
 

@@ -1,4 +1,4 @@
-package com.manning.sbip.ch02;
+package com.manning.sbip.a02;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
