@@ -1,0 +1,7 @@
+INSERT INTO COURSES(COURSE_ID, COURSE_NAME, COURSE_CATEGORY, COURSE_RATING, COURSE_DESCRIPTION) VALUES(1, 'Rapid Spring Boot Application Development', 'Spring', 4, 'Spring Boot gives all the features of the Spring Framework without all of the complexity');
+INSERT INTO COURSES(COURSE_ID, COURSE_NAME, COURSE_CATEGORY, COURSE_RATING, COURSE_DESCRIPTION) VALUES(2, 'Getting Started with Spring Security DSL', 'Spring', 5, 'Learn Spring Security DSL in easy steps');
+INSERT INTO COURSES(COURSE_ID, COURSE_NAME, COURSE_CATEGORY, COURSE_RATING, COURSE_DESCRIPTION) VALUES(3, 'Getting Started with Spring Cloud Kubernetes', 'Spring', 5, 'Master Spring Boot application deployment with Kubernetes');
+INSERT INTO COURSES(COURSE_ID, COURSE_NAME, COURSE_CATEGORY, COURSE_RATING, COURSE_DESCRIPTION) VALUES(4, 'Getting Started with Python', 'Python', 3, 'Learn Python concepts in easy steps');
+INSERT INTO COURSES(COURSE_ID, COURSE_NAME, COURSE_CATEGORY, COURSE_RATING, COURSE_DESCRIPTION) VALUES(5, 'Game Development with Python', 'Python', 4, 'Learn Python by developing 10 wonderful games');
+INSERT INTO COURSES(COURSE_ID, COURSE_NAME, COURSE_CATEGORY, COURSE_RATING, COURSE_DESCRIPTION) VALUES(6, 'JavaScript for All', 'JavaScript', 3, 'Learn basic JavaScript syntax that can apply to anywhere');
+INSERT INTO COURSES(COURSE_ID, COURSE_NAME, COURSE_CATEGORY, COURSE_RATING, COURSE_DESCRIPTION) VALUES(7, 'JavaScript Complete Guide', 'JavaScript', 3, 'Master JavaScript with Core Concepts and Web Development');
