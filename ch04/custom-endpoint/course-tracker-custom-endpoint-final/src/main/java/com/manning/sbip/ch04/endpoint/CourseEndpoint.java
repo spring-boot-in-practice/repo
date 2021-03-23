@@ -1,9 +1,6 @@
 package com.manning.sbip.ch04.endpoint;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.endpoint.annotation.DeleteOperation;
@@ -17,7 +14,7 @@ import com.manning.sbip.ch04.model.Course;
 import com.manning.sbip.ch04.repository.CourseRepository;
 
 @Component
-@Endpoint(id = "course")
+@Endpoint(id = "courses")
 public class CourseEndpoint {
 
 	@Autowired
@@ -29,14 +26,14 @@ public class CourseEndpoint {
 	}
 
 	@ReadOperation
-	public Course selectCourse(@Selector Long courseId) {
-		List<Course> courses = StreamSupport.stream(courseRepository.findAll().spliterator(), false)
-				.collect(Collectors.toList());
-		Optional<Course> optionalCourse = courses.stream().filter(course -> courseId == course.getId()).findFirst();
-		if(optionalCourse.isPresent()) {
-			return optionalCourse.get();
+	public Object selectCourse(@Selector Long courseId) {
+		Iterable<Course> courses = courseRepository.findAll();
+		for(Course course : courses) {
+			if(course.getId().equals(courseId)) {
+				return course;
+			}
 		}
-		return null;
+		return String.format("No course with course id %d available", courseId);
 	}
 	
 	@WriteOperation
