@@ -1,0 +1,6 @@
+#management:
+#  endpoint:
+#    health:
+#      status:
+#        http-mapping:
+#          down: 500

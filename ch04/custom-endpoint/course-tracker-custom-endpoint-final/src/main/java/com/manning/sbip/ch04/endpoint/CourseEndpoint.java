@@ -15,6 +15,7 @@ import com.manning.sbip.ch04.repository.CourseRepository;
 
 @Component
 @Endpoint(id = "courses")
+//@JmxEndpoint(id = "courses")
 public class CourseEndpoint {
 
 	@Autowired
