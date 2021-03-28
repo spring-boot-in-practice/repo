@@ -2,7 +2,7 @@
 
 # Spring Boot In Practice Book
 
-Spring Boot in Practice is a Spring Boot book that covers dozens of handy Spring Boot development techniques, from basic functions to hidden features you probably didn’t even know existed. Each recipe is built around a real-world problem and shows you how Spring Boot can provide a simple and elegant solution.
+[Spring Boot in Practice](https://www.manning.com/books/spring-boot-in-practice) is a Spring Boot book that covers dozens of handy Spring Boot development techniques, from basic functions to hidden features you probably didn’t even know existed. Each recipe is built around a real-world problem and shows you how Spring Boot can provide a simple and elegant solution.
 
 In Spring Boot in Practice you will learn:
 
