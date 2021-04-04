@@ -22,3 +22,33 @@ In Spring Boot in Practice you will learn:
 - Using Spring Boot with Kotlin and GraalVM
 
 Spring Boot in Practice is full of practical recipes for troubleshooting common development problems with Spring Boot. I have spent years building applications with Spring and share my extensive experience in this focused guide. You’ll master Spring Data, Spring Security, and other Spring-centric solutions for the common business problems you face every day as a software developer.
+
+## Gradle and Maven
+
+The code samples in the book use Apache Maven as the build tool. If you prefer Gradle over Maven, here's a table mapping Maven commands to Gradle:
+
+Maven | Gradle
+------ | ------
+`./mvnw clean` | `./gradlew clean`
+`./mvnw install` | `./gradlew build`
+`./mvnw test` | `./gradlew test`
+`./mvnw repackage` | `./gradlew bootJar`
+`./mvnw spring-boot:run` | `./gradlew bootRun`
+`./mvnw spring-boot:build-image` | `./gradlew bootBuildImage`
+
+## Chapters
+
+- Chapter 01 Booting Spring Boot
+- Chapter 02 Spring Boot Common Tasks
+
+- Appendix A Generating and Building Spring Boot projects
+- Appendix B Spring MVC and Thymeleaf Template Engine
+
+## Book forum
+Feel free to submit questions, feedback, or errata to the forum dedicated to "Spring Boot in Practice": https://livebook.manning.com/book/spring-boot-in-practice/.
+
+## Contact the author
+You are always welcome to contact me for questions, feedback, or suggestions. Feel free to reach out to me on Twitter, LinkedIn, or here on GitHub.
+
+
+
