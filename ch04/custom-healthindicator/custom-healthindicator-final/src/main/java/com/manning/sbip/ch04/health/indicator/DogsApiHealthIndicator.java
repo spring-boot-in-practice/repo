@@ -29,6 +29,4 @@ public class DogsApiHealthIndicator implements HealthIndicator {
 			 return Health.down().withException(ex).build();
 		}
 	}
-	
-
 }
