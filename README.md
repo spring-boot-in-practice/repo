@@ -1,8 +1,7 @@
-![alt text](https://github.com/spring-boot-in-practice/repo/blob/main/metadata/BookCover.jfif "Spring Boot In Practice")
+<a href="https://www.manning.com/books/spring-boot-in-practice?utm_source=musib&utm_medium=affiliate&utm_campaign=book_musib_spring_3_16_21&a_aid=musib&a_bid=27d46a98"><img src="https://github.com/spring-boot-in-practice/repo/blob/main/metadata/BookCover.jfif" alt="The book cover of 'Spring Boot in Practice' by Somnath Musib" align="left" height="200px" /></a>
 
-# Spring Boot In Practice Book
 
-[Spring Boot in Practice](https://www.manning.com/books/spring-boot-in-practice) is a Spring Boot book that covers dozens of handy Spring Boot development techniques, from basic functions to hidden features you probably didn’t even know existed. Each recipe is built around a real-world problem and shows you how Spring Boot can provide a simple and elegant solution.
+[Spring Boot in Practice](https://www.manning.com/books/spring-boot-in-practice?utm_source=musib&utm_medium=affiliate&utm_campaign=book_musib_spring_3_16_21&a_aid=musib&a_bid=27d46a98) is a Spring Boot book that covers dozens of handy Spring Boot development techniques, from basic functions to hidden features you probably didn’t even know existed. Each recipe is built around a real-world problem and shows you how Spring Boot can provide a simple and elegant solution.
 
 In Spring Boot in Practice you will learn:
 
