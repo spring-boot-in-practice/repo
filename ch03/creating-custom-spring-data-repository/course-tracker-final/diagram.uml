@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="17.5" y="0.0">org.springframework.data.repository.Repository</node>
+    <node x="0.0" y="82.0">com.manning.sbip.ch03.repository.BaseRepository</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.manning.sbip.ch03.repository.BaseRepository" target="org.springframework.data.repository.Repository">
+      <point x="0.0" y="-39.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
