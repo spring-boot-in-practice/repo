@@ -1,8 +1,8 @@
 name: Spring Boot in Practice CI
-on: [push] 
-#  push:
-#    branches:
-#      -main
+on: 
+  push:
+    branches:
+      -main
 jobs:
   build:
     name: Build ${{ matrix.project }}
