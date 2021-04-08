@@ -33,15 +33,21 @@ public class DefaultCourseService implements CourseService {
 
     @SneakyThrows
     public Course createCourse(Course course) {
-        //createCourseCounter.increment();
-        //return createCoursesTimer.recordCallable(() -> courseRepository.save(course));
+
+        /**
+         * Below statement is used to count the number of courses created
+         */
+        createCourseCounter.increment();
+        //return courseRepository.save(course);
+
         distributionSummary.record(course.getRating());
-        return createCoursesTimer.recordCallable(new Callable<Course>() {
-            @Override
-            public Course call() throws Exception {
-                return courseRepository.save(course);
-            }
-        });
+
+        /**
+         * Below statement is used to capture the time taken to save
+         * a course into the database using the Timer
+         */
+        return createCoursesTimer.recordCallable(() -> courseRepository.save(course));
+
     }
 
     public Optional<Course> findCourseById(Long courseId) {

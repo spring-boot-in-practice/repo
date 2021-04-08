@@ -15,7 +15,6 @@ public class CourseTrackerMetricsConfiguration {
     public Counter createCourseCounter(MeterRegistry meterRegistry) {
         return Counter.builder("api.courses.created.count")
                 .description("Total number of courses created")
-                .baseUnit(BaseUnits.OBJECTS)
                 .register(meterRegistry);
     }
 
@@ -30,11 +29,11 @@ public class CourseTrackerMetricsConfiguration {
     public Timer createCoursesTimer(MeterRegistry meterRegistry) {
         return Timer.builder("api.courses.creation.time")
                 .description("Course creation time")
-                .sla(Duration.ofMillis(10))
+                /*.sla(Duration.ofMillis(10))
                 .minimumExpectedValue(Duration.ofMillis((1)))
                 .maximumExpectedValue(Duration.ofMillis(10))
                 .publishPercentiles(0.5, 0.95)
-                .publishPercentileHistogram()
+                .publishPercentileHistogram()*/
                 .register(meterRegistry);
     }
 
