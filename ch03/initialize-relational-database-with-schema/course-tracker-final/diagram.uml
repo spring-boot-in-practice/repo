@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-144.0" y="91.0">org.springframework.data.repository.PagingAndSortingRepository</node>
+    <node x="-88.0" y="9.0">org.springframework.data.repository.Repository</node>
+    <node x="-158.0" y="417.0">org.springframework.data.repository.CrudRepository</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.data.repository.CrudRepository" target="org.springframework.data.repository.Repository">
+      <point x="0.0" y="-138.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.PagingAndSortingRepository" target="org.springframework.data.repository.CrudRepository">
+      <point x="0.0" y="-39.0" />
+      <point x="0.0" y="138.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="270.0" />
+  <SelectedNodes>
+    <node>org.springframework.data.repository.PagingAndSortingRepository</node>
+    <node>org.springframework.data.repository.Repository</node>
+    <node>org.springframework.data.repository.CrudRepository</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
