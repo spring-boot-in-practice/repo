@@ -1,4 +1,4 @@
-name: SBIP CI Pipeline
+name: Spring Boot in Practice CI
 on: 
   push:
     branches:
