@@ -1,0 +1,2 @@
+org.springframework.boot.diagnostics.FailureAnalyzer=\
+com.manning.sbip.ch04.exception.UrlNotAccessibleFailureAnalyzer
