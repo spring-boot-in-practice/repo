@@ -1,0 +1,27 @@
+name: SBIP CI Pipeline
+on: [push]
+
+jobs:
+  build:
+    name: Build ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [
+          ch01/spring-boot-app-demo,
+          ch02/bean-validation-custom-annotation/spring-boot-app-start,
+          ch02/bean-validation-custom-annotation/spring-boot-app-final
+        ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Assemble and test
+        run: |
+          cd ${{ matrix.project }}
+          chmod +x mvnw
+          ./mvnw clean install
