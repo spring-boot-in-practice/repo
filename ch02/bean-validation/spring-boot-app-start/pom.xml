@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.manning.sbip.ch02</groupId>
-    <artifactId>bean-validation</artifactId>
+    <artifactId>bean-validation-start</artifactId>
     <version>1.0.0</version>
-    <name>bean-validation</name>
+    <name>bean-validation-start</name>
     <description>Spring Boot project for chapter 02</description>
 
     <properties>

@@ -22,7 +22,6 @@ public class CourseTrackerApplication implements CommandLineRunner {
     }
 
 
-    @Override
     public void run(String... args) throws Exception {
         Course course = new Course();
         course.setId(1);
