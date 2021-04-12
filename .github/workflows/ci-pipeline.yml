@@ -34,11 +34,11 @@ jobs:
           ch03/custom-query-methods/course-tracker-start,
           ch03/custom-query-methods/course-tracker-final,
           ch03/initialize-relational-database-with-schema/course-tracker-start,
-          ch03/initialize-relational-database-with-schema/course-tracker-final
+          ch03/initialize-relational-database-with-schema/course-tracker-final,
           ch03/manage-domain-objects-with-jpa/course-tracker-start,
-          ch03/manage-domain-objects-with-jpa/course-tracker-final
-          ch03/managing-many-to-many-relationship/course-tracker-start
-          ch03/managing-many-to-many-relationship/course-tracker-final
+          ch03/manage-domain-objects-with-jpa/course-tracker-final,
+          ch03/managing-many-to-many-relationship/course-tracker-start,
+          ch03/managing-many-to-many-relationship/course-tracker-final,
           ch03/named-query-method/course-tracker-start, 
           ch03/named-query-method/course-tracker-final,
           ch03/using-criteria-api/course-tracker-start,
