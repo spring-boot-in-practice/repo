@@ -29,26 +29,26 @@ jobs:
           ch03/configuring-mongodb-database/course-tracker-final,
           ch03/configuring-relational-database/course-tracker-start,
           ch03/configuring-relational-database/course-tracker-final,
-          #ch03/creating-custom-spring-data-repository/course-tracker-start,
-          #ch03/creating-custom-spring-data-repository/course-tracker-final,
-          #ch03/custom-query-methods/course-tracker-start,
-          #ch03/custom-query-methods/course-tracker-final,
+          ch03/creating-custom-spring-data-repository/course-tracker-start,
+          ch03/creating-custom-spring-data-repository/course-tracker-final,
+          ch03/custom-query-methods/course-tracker-start,
+          ch03/custom-query-methods/course-tracker-final,
           ch03/initialize-relational-database-with-schema/course-tracker-start,
           ch03/initialize-relational-database-with-schema/course-tracker-final
-          #ch03/manage-domain-objects-with-jpa/course-tracker-start,
-          #ch03/manage-domain-objects-with-jpa/course-tracker-final
-          #ch03/managing-many-to-many-relationship/course-tracker-start
-          #ch03/managing-many-to-many-relationship/course-tracker-final
-          #ch03/named-query-method/course-tracker-start, 
-          #ch03/named-query-method/course-tracker-final,
-          #ch03/using-criteria-api/course-tracker-start,
-          #ch03/using-criteria-api/course-tracker-final,
-          #ch03/using-paging-and-sorting-repository/course-tracker-start,
-          #ch03/using-paging-and-sorting-repository/course-tracker-final,
-          #ch03/using-query-annotation/course-tracker-start,
-          #ch03/using-query-annotation/course-tracker-final,
-          #ch03/using-query-dsl/course-tracker-start,
-          #ch03/using-query-dsl/course-tracker-final,
+          ch03/manage-domain-objects-with-jpa/course-tracker-start,
+          ch03/manage-domain-objects-with-jpa/course-tracker-final
+          ch03/managing-many-to-many-relationship/course-tracker-start
+          ch03/managing-many-to-many-relationship/course-tracker-final
+          ch03/named-query-method/course-tracker-start, 
+          ch03/named-query-method/course-tracker-final,
+          ch03/using-criteria-api/course-tracker-start,
+          ch03/using-criteria-api/course-tracker-final,
+          ch03/using-paging-and-sorting-repository/course-tracker-start,
+          ch03/using-paging-and-sorting-repository/course-tracker-final,
+          ch03/using-query-annotation/course-tracker-start,
+          ch03/using-query-annotation/course-tracker-final,
+          ch03/using-query-dsl/course-tracker-start,
+          ch03/using-query-dsl/course-tracker-final
           #ch04/custom-endpoint/course-tracker-custom-endpoint-start,
           #ch04/custom-endpoint/course-tracker-custom-endpoint-final,
           #ch04/custom-failure-analyzer/course-tracker-custom-failure-analyzer-start,

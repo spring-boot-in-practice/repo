@@ -19,10 +19,6 @@ class CourseTrackerSpringBootApplicationTests {
     private CourseRepository courseRepository;
 
     @Test
-    void contextLoads() {
-    }
-
-    @Test
     public void givenCoursesCreatedWhenLoadCoursesBySpringCategoryThenExpectThreeCourses() {
         courseRepository.saveAll(getCourseList());
         assertThat(courseRepository.findAllByCategoryAndRating("Spring", 4)).hasSize(1);
