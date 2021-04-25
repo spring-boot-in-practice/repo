@@ -20,7 +20,7 @@ class CourseTrackerSpringBootApplicationTests {
 
     @Test
     public void givenCoursesCreatedWhenLoadCoursesWithQueryThenExpectCorrectCourseDetails() {
-        courseRepository.saveAll(getCourseList());
+        saveMockCourses();
         assertThat(courseRepository.findAllByCategory("Spring")).hasSize(3);
         assertThat(courseRepository.findAllByRating(3)).hasSize(2);
         assertThat(courseRepository.findAllByCategoryAndRatingGreaterThan("Spring", 3)).hasSize(2);
@@ -28,7 +28,7 @@ class CourseTrackerSpringBootApplicationTests {
         assertThat(courseRepository.findAllByCategoryAndRatingGreaterThan("Spring", 3)).hasSize(3);
     }
 
-    private List<Course> getCourseList() {
+    private void saveMockCourses() {
         Course rapidSpringBootCourse = new Course("Rapid Spring Boot Application Development", "Spring", 4,"Spring Boot gives all the power of the Spring Framework without all of the complexity");
         Course springSecurityDslCourse = new Course("Getting Started with Spring Security DSL", "Spring", 5, "Learn Spring Security DSL in easy steps");
         Course springCloudKubernetesCourse = new Course("Getting Started with Spring Cloud Kubernetes", "Spring", 3, "Master Spring Boot application deployment with Kubernetes");
@@ -37,6 +37,7 @@ class CourseTrackerSpringBootApplicationTests {
         Course javaScriptForAll = new Course("JavaScript for All", "JavaScript", 4, "Learn basic JavaScript syntax that can apply to anywhere");
         Course javaScriptCompleteGuide = new Course("JavaScript Complete Guide", "JavaScript", 5, "Master JavaScript with Core Concepts and Web Development");
 
-        return Arrays.asList(rapidSpringBootCourse, springSecurityDslCourse, springCloudKubernetesCourse, rapidPythonCourse, gameDevelopmentWithPython, javaScriptForAll, javaScriptCompleteGuide);
+        List<Course> courses = Arrays.asList(rapidSpringBootCourse, springSecurityDslCourse, springCloudKubernetesCourse, rapidPythonCourse, gameDevelopmentWithPython, javaScriptForAll, javaScriptCompleteGuide);
+        courseRepository.saveAll(courses);
     }
 }

@@ -1,5 +1,6 @@
 package com.manning.sbip.ch03;
 
+import com.manning.sbip.ch03.ibp.DescriptionOnly;
 import com.manning.sbip.ch03.repository.AuthorRepository;
 import com.manning.sbip.ch03.repository.CourseRepository;
 import org.junit.jupiter.api.Test;
@@ -24,7 +25,8 @@ class CourseTrackerSpringBootApplicationTests {
 
     @Test
     public void givenACourseAvailableWhenGetCourseByNameThenGetCourseDescription() {
-        assertThat(courseRepository.getCourseByName("Rapid Spring Boot Application Development"))
+        Iterable<DescriptionOnly> result = courseRepository.getCourseByName("Rapid Spring Boot Application Development");
+        assertThat(result)
                 .extracting("description").contains("Spring Boot gives all the power of the Spring Framework without all of the complexity");
     }
 
