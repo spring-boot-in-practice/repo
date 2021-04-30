@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.manning.sbip.ch04</groupId>
-	<artifactId>spring-boot-app-demo</artifactId>
+	<artifactId>spring-boot-app-demo-final</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-app-demo</name>
+	<name>spring-boot-app-demo-final</name>
 	<description>Spring Boot Demo Application</description>
 
 	<properties>
