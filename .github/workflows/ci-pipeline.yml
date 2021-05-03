@@ -48,7 +48,7 @@ jobs:
           ch03/using-query-annotation/course-tracker-start,
           ch03/using-query-annotation/course-tracker-final,
           ch03/using-query-dsl/course-tracker-start,
-          ch03/using-query-dsl/course-tracker-final
+          ch03/using-query-dsl/course-tracker-final,
           #ch04/custom-endpoint/course-tracker-custom-endpoint-start,
           #ch04/custom-endpoint/course-tracker-custom-endpoint-final,
           #ch04/custom-failure-analyzer/course-tracker-custom-failure-analyzer-start,
