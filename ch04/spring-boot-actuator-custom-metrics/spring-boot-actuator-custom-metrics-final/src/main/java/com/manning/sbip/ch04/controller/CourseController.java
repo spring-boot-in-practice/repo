@@ -1,19 +1,22 @@
 package com.manning.sbip.ch04.controller;
 
-import com.manning.sbip.ch04.model.Course;
-import com.manning.sbip.ch04.service.CourseService;
-import io.micrometer.core.instrument.DistributionSummary;
-import io.micrometer.core.instrument.MeterRegistry;
-import io.micrometer.core.instrument.Timer;
+import java.util.Collections;
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
-import javax.validation.Valid;
-import java.util.Collections;
-import java.util.List;
+import com.manning.sbip.ch04.model.Course;
+import com.manning.sbip.ch04.service.CourseService;
 
 @Controller
 public class CourseController {
