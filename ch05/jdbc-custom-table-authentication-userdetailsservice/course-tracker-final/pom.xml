@@ -9,13 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.manning.sbip.ch05</groupId>
-    <artifactId>course-tracker</artifactId>
+    <artifactId>course-tracker-jdbc-custom-table-auth-uds-final</artifactId>
     <version>1.0.0</version>
-    <name>course-tracker</name>
+    <name>course-tracker-jdbc-custom-table-auth-uds-final</name>
     <description>Spring Boot application for Chapter 05</description>
 
     <properties>
-        <java.version>14</java.version>
+        <java.version>15</java.version>
     </properties>
 
     <dependencies>
