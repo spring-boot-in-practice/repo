@@ -61,7 +61,21 @@ jobs:
           ch04/spring-boot-actuator-info-endpoint,
           ch04/spring-boot-actuator-metrics,
           ch04/spring-boot-actuator/spring-boot-app-demo-start,
-          ch04/spring-boot-actuator/spring-boot-app-demo-final
+          ch04/spring-boot-actuator/spring-boot-app-demo-final,
+          ch05/http-basic-authentication/course-tracker-start,
+          ch05/http-basic-authentication/course-tracker-final,
+          ch05/implementing-custom-loginpage/course-tracker-start,
+          ch05/implementing-custom-loginpage/course-tracker-final,
+          ch05/Implementing-inmemory-authentication/course-tracker-start,
+          ch05/Implementing-inmemory-authentication/course-tracker-final,
+          ch05/introducing-spring-security/course-tracker-start,
+          ch05/introducing-spring-security/course-tracker-final,
+          ch05/jdbc-custom-table-authentication-userdetailsservice/course-tracker-start,
+          ch05/jdbc-custom-table-authentication-userdetailsservice/course-tracker-final,
+          ch05/jdbc-default-authentication/course-tracker-start,
+          ch05/jdbc-default-authentication/course-tracker-final,
+          ch05/ldap-authentication/course-tracker-start,
+          ch05/ldap-authentication/course-tracker-final
         ]
     steps:
       - name: Checkout repository
