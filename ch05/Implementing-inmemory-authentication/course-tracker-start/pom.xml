@@ -15,7 +15,7 @@
     <description>Spring Boot application for Chapter 05</description>
 
     <properties>
-        <java.version>14</java.version>
+        <java.version>15</java.version>
     </properties>
 
     <dependencies>
