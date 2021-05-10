@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.manning.sbip.ch06</groupId>
-    <artifactId>course-tracker-email-verification-final</artifactId>
+    <artifactId>course-tracker-remember-me-final</artifactId>
     <version>1.0.0</version>
-    <name>course-tracker-email-verification-final</name>
+    <name>course-tracker-remember-me-final</name>
     <description>Spring Boot application for Chapter 06</description>
 
     <properties>
@@ -76,6 +76,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
     <build>
