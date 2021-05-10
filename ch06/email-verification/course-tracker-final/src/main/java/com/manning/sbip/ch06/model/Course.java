@@ -3,8 +3,13 @@ package com.manning.sbip.ch06.model;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
 @Entity
 @Table(name = "COURSES")
+@NoArgsConstructor
 public class Course {
 
 	@Id
@@ -28,65 +33,4 @@ public class Course {
 	@Column(name = "DESCRIPTION")
 	@NotEmpty(message = "Course description field can't be empty")
 	private String description;
-
-	public Course() {}
-
-	public Course(Long id, String name, String category, int rating, String description) {
-		this.id = id;
-		this.name = name;
-		this.category = category;
-		this.rating = rating;
-		this.description = description;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public int getRating() {
-		return rating;
-	}
-
-	public void setRating(int rating) {
-		this.rating = rating;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	@Override
-	public String toString() {
-		return "Course{" +
-				"id=" + id +
-				", name='" + name + '\'' +
-				", category='" + category + '\'' +
-				", rating=" + rating +
-				", description='" + description + '\'' +
-				'}';
-	}
 }

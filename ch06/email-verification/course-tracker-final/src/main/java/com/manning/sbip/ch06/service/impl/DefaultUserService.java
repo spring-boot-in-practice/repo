@@ -23,7 +23,7 @@ public class DefaultUserService implements UserService {
        applicationUser.setFirstName(userDto.getFirstName());
        applicationUser.setLastName(userDto.getLastName());
        applicationUser.setEmail(userDto.getEmail());
-       applicationUser.setUserName(userDto.getUsername());
+       applicationUser.setUsername(userDto.getUsername());
        applicationUser.setPassword(passwordEncoder.encode(userDto.getPassword()));
        applicationUser.setVerified(false);
 
