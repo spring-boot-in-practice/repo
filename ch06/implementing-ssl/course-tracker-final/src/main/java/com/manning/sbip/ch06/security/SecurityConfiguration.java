@@ -9,30 +9,30 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().passwordEncoder(passwordEncoder())
-		.withUser("user").password(passwordEncoder().encode("pass")).roles("USER");
+		auth.inMemoryAuthentication().passwordEncoder(passwordEncoder()).withUser("user")
+				.password(passwordEncoder().encode("pass")).roles("USER");
 	}
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/login").permitAll()
-                .anyRequest().authenticated().and().formLogin().loginPage("/login");
-    }
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.requiresChannel().anyRequest().requiresSecure()
+		.and()
+		.authorizeRequests().antMatchers("/login").permitAll()
+		.anyRequest().authenticated().and().formLogin().loginPage("/login");
+	}
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/webjars/**", "/images/*", "/css/*", "/h2-console/**");
-    }
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/webjars/**", "/images/*", "/css/*", "/h2-console/**");
+	}
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 }

@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.manning.sbip.ch06</groupId>
-    <artifactId>course-tracker-implementing-ssl-start</artifactId>
+    <artifactId>course-tracker-implementing-https-start</artifactId>
     <version>1.0.0</version>
-    <name>course-tracker-implementing-ssl-start</name>
+    <name>course-tracker-implementing-https-start</name>
     <description>Spring Boot application for Chapter 06</description>
 
     <properties>
