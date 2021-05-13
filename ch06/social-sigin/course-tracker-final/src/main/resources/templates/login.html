@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+	<script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js"
+		th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js"
+		th:src="@{/webjars/jquery/jquery.min.js}"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+		<a class="navbar-brand brand-text" href="#">
+			<img src="/images/logo.png" width="30" height="30" alt="logo">
+			Course Tracker
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-between" id="navbar-list">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#" th:href="@{/index}">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" th:href="@{/addcourse}">Add Course</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 bg-dark text-light text-center border rounded-top border-bottom-0 border-dark p-1">
+				<h5 class="font-weight-bold">Login</h5>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 border rounded-bottom border-dark p-3">
+				<div th:if="${loginError}" class="alert alert-danger">Wrong Username or Password</div>
+				<div th:if="${loginVerified}" class="alert alert-success">Account has been verified. Please sign-in
+				</div>
+				<div th:if="${loginDisabled}" class="alert alert-danger">Account is not yet active. Please check your
+					email</div>
+				<form th:action="@{/login}" method="post">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input type="text" class="form-control" name="username" placeholder="Enter Username" required
+							autofocus>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="password" placeholder="Enter Password"
+							required autofocus>
+					</div>
+					<div class="text-center">
+						<button type="submit" class="btn btn-dark">Submit</button>
+						<a class="btn btn-success" href="#" th:href="@{/adduser}">Register</a>
+					</div>
+					<div class="text-center pt-4">
+						<a class="btn btn-block btn-dark" href="/oauth2/authorization/google">Login with Google</a>
+					</div>
+					
+				</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</body>
+
+</html>
