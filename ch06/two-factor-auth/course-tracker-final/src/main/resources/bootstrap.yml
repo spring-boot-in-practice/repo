@@ -1,0 +1,10 @@
+#spring:
+#  application:
+#    name: course-tracker
+#  cloud:
+#    vault:
+#      host: localhost
+#      port: 8200
+#      scheme: http
+#      authentication: token
+#      token: s.SiZOiwdtEkPyh57Qa2OUuiqo

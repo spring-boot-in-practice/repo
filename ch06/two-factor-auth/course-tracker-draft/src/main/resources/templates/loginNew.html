@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"-->
+<link rel="stylesheet" type="text/css"
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+<script
+	src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js"
+	th:src="@{/webjars/jquery/jquery.min.js}"></script>
+</head>
+<body>
+	<nav
+		class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-end">
+		<ul class="nav nav-pills">
+			<li class="nav-item"><a class="nav-link" href="/login"
+				th:href="@{/adduser}">Register</a></li>
+		</ul>
+	</nav>
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<h2 class="mb-1 text-center">Login</h2>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div th:if="${loginError}" class="alert alert-danger">Wrong
+					Username or Password</div>
+				<div th:if="${verified}" class="alert alert-success">Account
+					has been verified. Please sign-in</div>
+				<form th:action="@{/login}" method="post">
+					<div class="form-group">
+						<label for="username">Username</label> <input type="text"
+							class="form-control" name="username" placeholder="Enter Username"
+							required autofocus>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label> <input type="password"
+							class="form-control" name="password" placeholder="Enter Password"
+							required autofocus>
+					</div>
+					<div class="form-group">
+						<label for="securityPin">Security Pin</label> <input
+							type="password" class="form-control" name="securityPin"
+							placeholder="Enter Security Pin" required autofocus>
+					</div>
+					<div class="form-check">
+						<input type="checkbox" class="form-check-input" id="checkbox" name="remember-me">
+						<label class="form-check-label" for="exampleCheck1">Remember Me</label>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<a class="btn btn-primary" href="/oauth2/authorization/google">Login with Google</a><br><br>
+				</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</body>
+</html>

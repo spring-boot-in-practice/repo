@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Enable Two Factor Authentication</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
+	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+	<script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+		<a class="navbar-brand brand-text" href="#">
+			<img src="/images/logo.png" width="30" height="30" alt="logo">
+			Course Tracker
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-between" id="navbar-list">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#" th:href="@{/index}">Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#" th:href="@{/addcourse}">Add Course <span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+			<ul class="navbar-nav ml-auto">
+	            <li class="nav-item">
+	                <form th:action="@{/logout}" method="post">
+	                    <button class="btn btn-danger" type="submit">logout</button>
+	                </form>
+	            </li>
+	        </ul>
+		</div>
+	</nav>
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<form action="#" th:action="@{/confirm-totp}" th:object="${code}"
+					method="POST" enctype="utf8">
+					<table class="table table-borderless">
+						<tbody th:if="${qrUrl != null}">
+							<tr>
+								<td>Use your Google Authenticator App, to scan the QR Code<br>
+									<img alt="QR Code" th:src="${qrUrl}">
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<p th:if="${confirmError}" class="error">Wrong code, try
+										again</p> <input type="text" th:field="*{code}"
+									placeholder="Verification Code" /><br>
+									<button type="submit" class="signupbtn signup_btn">Enable
+										2fa</button>
+								</td>
+								<td></td>
+							</tr>
+						</tbody>
+						<tbody th:if="${totpEnabled}">
+							<tr>
+								<td class="alert alert-success">2fa Enabled</td>
+								<td></td>
+							</tr>
+						</tbody>
+						<tbody th:if="${qrUrl == null && !totpEnabled}">
+							<tr>
+								<td><a href="/setup-totp">Enable 2FA with Google
+										Authenticator</a></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</body>
+</html>

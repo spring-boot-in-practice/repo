@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+</head>
+
+
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Enter the Verification Code</h1>
+            <p th:if="${loginError}" class="error">Incorrect user, password or security pin</p>
+            <div>
+                <form class="form-signin" th:action="@{/login}" method="post">
+                <input type="password" name="totp_code" class="form-control" placeholder="Verification code" required autofocus>
+                <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

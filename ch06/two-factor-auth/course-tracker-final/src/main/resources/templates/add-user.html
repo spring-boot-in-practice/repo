@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add an User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"-->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    Reca
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-end">
+  <ul class="nav nav-pills">
+  <li class="nav-item">
+  	<a class="nav-link" href="/login" th:href="@{/addcourse}">Add Course</a>
+  </li>
+  <li class="nav-item">
+  	<a class="nav-link" href="/login" th:href="@{/login}">Sign In</a>
+  </li>
+</ul> 
+</nav>
+<div class="container my-5">
+	
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2 class="mb-1 text-center">Register</h2>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="#" th:action="@{/adduser}" th:object="${myUser}" method="POST" >
+                <div th:if="${param.success}" >
+                    <div class="alert alert-success">
+                        Registration complete!, you can now <a href="/login" th:href="@{/login}">login</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputFirstname">Firstname</label>
+                    <input type="text" th:field="*{firstName}" class="form-control" id="inputFirstname" placeholder="Enter First Name">
+                    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="inputLastname">Lastname</label>
+                    <input type="text" th:field="*{lastName}" class="form-control" id="inputLastname" placeholder="Enter Last Name">
+                    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" th:field="*{username}" class="form-control" id="inputUsername" placeholder="Enter Username">
+                    <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email Address</label>
+                    <input type="email" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Enter Email">
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" th:field="*{password}" class="form-control" id="inputPassword" placeholder="Password">
+                    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" th:field="*{confirmPassword}" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                    <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="securityPin">Security Pin</label>
+                    <input type="password" th:field="*{securityPin}" class="form-control" id="securityPin" placeholder="Security Pin">
+                    <span th:if="${#fields.hasErrors('securityPin')}" th:errors="*{securityPin}" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmSecurityPin">Confirm Security Pin</label>
+                    <input type="password" th:field="*{confirmSecurityPin}" class="form-control" id="confirmSecurityPin" placeholder="Confirm Security Pin">
+                    <span th:if="${#fields.hasErrors('confirmSecurityPin')}" th:errors="*{confirmSecurityPin}" class="text-danger"></span>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="confirmSecurityPin">Enable MFA?</label>
+                    <input type="checkbox" th:checked="*{totpEnabled}" class="form-control" name="totpEnabled">
+                    <span th:if="${#fields.hasErrors('totpEnabled')}" th:errors="*{totpEnabled}" class="text-danger"></span>
+                </div>  -->
+                <div class="g-recaptcha" data-sitekey="6LfenfoZAAAAAA1raySWob2ctxTdODS3MvCyrY1y"></div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-dark center" value="Sign Up" />
+                    <p>Already have an account? <a href="/login">Sign in</a></p>
+                </div>
+                <!--input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /-->
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+</body>
+</html>
