@@ -34,28 +34,23 @@
 	
     <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <h2 class="mb-1 text-center">Register User</h2>
+        <div class="col-md-6 bg-dark text-light text-center border rounded-top border-bottom-0 border-dark p-1">
+            <h5 class="mb-1 text-center">Register User</h5>
         </div>
         <div class="col-md-3"></div>
     </div>
     <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-6 border rounded-bottom border-dark p-3">
             <form action="#" th:action="@{/adduser}" th:object="${user}" method="POST" >
                 <div th:if="${param.success}" >
                     <div class="alert alert-success">
                         Registration completed. You can now <a href="/login" th:href="@{/login}">login</a>
                     </div>
                 </div>
-                <div th:if="${param.validate}" >
-                    <div class="alert alert-warning">
-                        Account Created. Check your email for account activation
-                    </div>
-                </div>
                 <div class="form-group">
                     <label for="inputFirstname">Firstname</label>
-                    <input type="text" th:field="*{firstName}" class="form-control" id="inputFirstname" placeholder="Enter First Name">
+                    <input type="text" th:field="*{firstName}" class="form-control" id="inputFirstname" placeholder="Enter First Name" autofocus>
                     <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -83,7 +78,7 @@
                     <input type="password" th:field="*{confirmPassword}" class="form-control" id="confirmPassword" placeholder="Confirm Password">
                     <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group text-center">
                     <input type="submit" class="btn btn-dark center" value="Sign Up" />
                     <p>Already have an account? <a href="/login">Sign in</a></p>
                 </div>

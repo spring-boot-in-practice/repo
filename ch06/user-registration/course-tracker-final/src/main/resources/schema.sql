@@ -1,4 +1,4 @@
-CREATE TABLE courses (
+CREATE TABLE COURSES (
   id          BIGINT NOT NULL auto_increment,
   category    VARCHAR(255),
   description VARCHAR(255),
@@ -7,7 +7,7 @@ CREATE TABLE courses (
   PRIMARY KEY (id)
 );
 
-create table ct_users(
+create table CT_USERS(
 	id BIGINT NOT NULL auto_increment,
     first_name varchar(50),
     last_name varchar(50),

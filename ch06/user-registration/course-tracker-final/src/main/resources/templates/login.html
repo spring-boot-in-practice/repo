@@ -27,24 +27,24 @@
 					<a class="nav-link" href="#" th:href="@{/addcourse}">Add Course</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav ml-auto">
+			<!--ul class="navbar-nav ml-auto">
 				<li class="nav-item">
 					<a class="nav-link" href="#" th:href="@{/adduser}">Register</a>
 				</li>
-			</ul>
+			</ul-->
 		</div>
 	</nav>
 	<div class="container my-5">
 		<div class="row">
 			<div class="col-md-3"></div>
-			<div class="col-md-6">
-				<h2 class="mb-1 text-center">Login</h2>
+			<div class="col-md-6 bg-dark text-light text-center border rounded-top border-bottom-0 border-dark p-1">
+				<h5 class="mb-1 text-center">Login</h5>
 			</div>
 			<div class="col-md-3"></div>
 		</div>
 		<div class="row">
 			<div class="col-md-3"></div>
-			<div class="col-md-6">
+			<div class="col-md-6 border rounded-bottom border-dark p-3">
 				<div th:if="${loginError}" class="alert alert-danger">Wrong Username or Password</div>
 				<div th:if="${verified}" class="alert alert-success">Account has been verified. Please sign-in</div>
 				<form th:action="@{/login}" method="post">
@@ -56,8 +56,10 @@
 						<label for="password">Password</label>
 						<input type="password" class="form-control" name="password" placeholder="Enter Password" required autofocus>
 					</div>
-					<button type="submit" class="btn btn-dark">Submit</button>
-					<a class="btn btn-success" href="#" th:href="@{/adduser}">Register</a>
+					<div class="text-center">
+						<button type="submit" class="btn btn-dark">Submit</button>
+						<a class="btn btn-success" href="#" th:href="@{/adduser}">Register</a>
+					</div>
 				</form>
 			</div>
 			<div class="col-md-3"></div>
