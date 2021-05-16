@@ -29,12 +29,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/adduser", "/login", "/login-error", "/login-verified", "/login-disabled", "/verify/email").permitAll()
                 .anyRequest().authenticated().and().formLogin().loginPage("/login").failureHandler(customAuthenticationFailureHandler)
                 .and().rememberMe().key("remember-me-key").rememberMeCookieName("course-tracker-remember-me")
-                .and().logout().deleteCookies("course-tracker-remember-me");
+                .and().logout().logoutUrl("/logout").deleteCookies("JSESSIONID");
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/webjars/**", "/images/*", "/css/*");
+        web.ignoring().antMatchers("/webjars/**", "/images/*", "/css/*", "/h2-console/**");
     }
 
     @Override
