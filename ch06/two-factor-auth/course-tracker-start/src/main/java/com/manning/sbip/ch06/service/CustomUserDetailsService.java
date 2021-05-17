@@ -36,6 +36,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 			simpleGrantedAuthority = new SimpleGrantedAuthority("ROLE_USER");
 		}
 		CustomUser customUser = new CustomUser(user.getUsername(), user.getPassword(), user.isVerified(), true, true, true, Arrays.asList(simpleGrantedAuthority));
+		customUser.setSecurityPin(user.getSecurityPin());
 		customUser.setTotpEnabled(user.isTotpEnabled());
 		/*return org.springframework.security.core.userdetails.User.withUsername(user.getUserName())
 				.password(user.getPassword()).roles("USER").disabled(false).build();*/

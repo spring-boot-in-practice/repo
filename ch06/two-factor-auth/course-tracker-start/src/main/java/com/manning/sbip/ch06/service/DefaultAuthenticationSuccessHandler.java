@@ -23,8 +23,7 @@ public class DefaultAuthenticationSuccessHandler implements AuthenticationSucces
             redirectStrategy.sendRedirect(request, response, "/totp-login");
         }
         else {
-            //redirectStrategy.sendRedirect(request, response, "/index");
-            redirectStrategy.sendRedirect(request, response, "/account");
+            redirectStrategy.sendRedirect(request, response, "/index");
         }
     }
 

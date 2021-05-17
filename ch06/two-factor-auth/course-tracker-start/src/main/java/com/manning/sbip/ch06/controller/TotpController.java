@@ -9,17 +9,13 @@ public class TotpController {
 
     @GetMapping("/totp-login")
     public String totpLogin(){
-        return "totp-login";
+        return "totpLogin";
     }
 
-    @GetMapping("/totp-confirmation")
-    public String totpConfirmation(){
-        return "totp-confirmation";
-    }
 
     @GetMapping("/totp-login-error")
     public String totpLoginError(Model model){
         model.addAttribute("loginError", true);
-        return "totp-login";
+        return "totpLogin";
     }
 }

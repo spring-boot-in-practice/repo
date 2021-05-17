@@ -8,9 +8,6 @@ import com.manning.sbip.ch06.repository.UserRepository;
 import com.warrenstrange.googleauth.GoogleAuthenticator;
 import com.warrenstrange.googleauth.GoogleAuthenticatorKey;
 import com.warrenstrange.googleauth.GoogleAuthenticatorQRGenerator;
-
-import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,7 +23,6 @@ public class TotpService {
         this.userRepository = userRepository;
     }
 
-    @Transactional
     public String generateAuthenticationQrUrl(String username){
         GoogleAuthenticatorKey authenticationKey = googleAuth.createCredentials();
         String secret = authenticationKey.getKey();

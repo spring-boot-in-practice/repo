@@ -3,36 +3,28 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Add User</title>
+    <title>Add an User</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}" />
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"-->
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
     <script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    Reca
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
-    <a class="navbar-brand brand-text" href="#">
-        <img src="/images/logo.png" width="30" height="30" alt="logo">
-        Course Tracker
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-between" id="navbar-list">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#" th:href="@{/index}">Home</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#" th:href="@{/addcourse}">Add Course <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-end">
+  <ul class="nav nav-pills">
+  <li class="nav-item">
+  	<a class="nav-link" href="/login" th:href="@{/addcourse}">Add Course</a>
+  </li>
+  <li class="nav-item">
+  	<a class="nav-link" href="/login" th:href="@{/login}">Sign In</a>
+  </li>
+</ul> 
 </nav>
 <div class="container my-5">
-
+	
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -46,7 +38,7 @@
             <form action="#" th:action="@{/adduser}" th:object="${myUser}" method="POST" >
                 <div th:if="${param.success}" >
                     <div class="alert alert-success">
-                        Registration completed. You can now <a href="/login" th:href="@{/login}">login</a>.
+                        Registration complete!, you can now <a href="/login" th:href="@{/login}">login</a>
                     </div>
                 </div>
                 <div class="form-group">
@@ -75,9 +67,31 @@
                     <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" th:field="*{confirmPassword}" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                    <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="securityPin">Security Pin</label>
+                    <input type="password" th:field="*{securityPin}" class="form-control" id="securityPin" placeholder="Security Pin">
+                    <span th:if="${#fields.hasErrors('securityPin')}" th:errors="*{securityPin}" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmSecurityPin">Confirm Security Pin</label>
+                    <input type="password" th:field="*{confirmSecurityPin}" class="form-control" id="confirmSecurityPin" placeholder="Confirm Security Pin">
+                    <span th:if="${#fields.hasErrors('confirmSecurityPin')}" th:errors="*{confirmSecurityPin}" class="text-danger"></span>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="confirmSecurityPin">Enable MFA?</label>
+                    <input type="checkbox" th:checked="*{totpEnabled}" class="form-control" name="totpEnabled">
+                    <span th:if="${#fields.hasErrors('totpEnabled')}" th:errors="*{totpEnabled}" class="text-danger"></span>
+                </div>  -->
+                <div class="g-recaptcha" data-sitekey="6LfenfoZAAAAAA1raySWob2ctxTdODS3MvCyrY1y"></div>
+                <div class="form-group">
                     <input type="submit" class="btn btn-dark center" value="Sign Up" />
                     <p>Already have an account? <a href="/login">Sign in</a></p>
                 </div>
+                <!--input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /-->
             </form>
         </div>
         <div class="col-md-3"></div>

@@ -18,7 +18,10 @@ public class DefaultUserService implements UserService {
     }
 
     public User createUser(User user) {
+        user.setConfirmPassword(passwordEncoder.encode(user.getConfirmPassword()));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setConfirmSecurityPin(passwordEncoder.encode(user.getConfirmSecurityPin()));
+        user.setSecurityPin(passwordEncoder.encode(user.getSecurityPin()));
         return userRepository.save(user);
     }
 

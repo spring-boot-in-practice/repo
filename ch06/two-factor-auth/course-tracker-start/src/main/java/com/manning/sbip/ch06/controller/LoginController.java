@@ -9,18 +9,23 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login() {
-        return "loginPage";
+        return "loginNew";
     }
 
     @GetMapping("/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
-        return "loginPage";
+        return "loginNew";
     }
 
     @GetMapping("/login-verified")
     public String loginVerified(Model model) {
         model.addAttribute("verified", true);
-        return "loginPage";
+        return "loginNew";
     }
+    
+    /* @PostMapping("/login")
+	public String loginValidate() {
+		return "redirect:/index";
+	} */
 }

@@ -31,8 +31,14 @@ public class User {
     private String email;
     @NotEmpty(message = "Password can't be empty")
     private String password;
+    @NotEmpty(message = "Confirm password can't be empty")
+    private String confirmPassword;
 
     private boolean verified;
+    @NotEmpty(message = "Security Pin can't be empty")
+    private String securityPin;
+    @NotEmpty(message = "Confirm Security Pin can't be empty")
+    private String confirmSecurityPin;
 
     @NotNull
     private boolean totpEnabled;

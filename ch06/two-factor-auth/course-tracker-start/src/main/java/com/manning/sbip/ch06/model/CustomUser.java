@@ -11,6 +11,10 @@ public class CustomUser extends User {
 
 	private static final long serialVersionUID = 7300039320319212790L;
 
+	@Getter
+    @Setter
+    private String securityPin;
+
     @Setter
     @Getter
     private boolean totpEnabled;

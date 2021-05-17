@@ -10,13 +10,14 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.manning.sbip.ch06</groupId>
-	<artifactId>course-tracker-two-factor-auth-final</artifactId>
+	<artifactId>course-tracker-two-factor-auth-start</artifactId>
 	<version>1.0.0</version>
-	<name>course-tracker-two-factor-auth-final</name>
+	<name>course-tracker-two-factor-auth-start</name>
 	<description>Spring Boot project for Chapter 06</description>
 
 	<properties>
 		<java.version>15</java.version>
+		<spring-cloud.version>2020.0.0-M5</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -40,6 +41,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -58,11 +65,9 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-
+		<!--dependency> <groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-starter-vault-config</artifactId> 
+			</dependency -->
+	
 		<dependency>
 			<groupId>com.warrenstrange</groupId>
 			<artifactId>googleauth</artifactId>
@@ -97,6 +102,18 @@
 		</dependency>
 	</dependencies>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -105,4 +122,14 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+
+
 </project>

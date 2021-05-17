@@ -7,7 +7,7 @@ CREATE TABLE COURSES (
   PRIMARY KEY (id)
 );
 
-create table CT_USERS (
+create table CT_USERS(
 	id BIGINT NOT NULL auto_increment,
     first_name varchar(50),
     last_name varchar(50),
@@ -22,13 +22,13 @@ create table CT_USERS (
     PRIMARY KEY (id)
 );
 
-create table CT_EMAIL_VERIFICATIONS (
+create table CT_EMAIL_VERIFICATIONS(
     verification_id varchar(50),
     username varchar(50),
     PRIMARY KEY (verification_id)
 );
 
-create table CT_TOTP_DETAILS (
+create table TOTP_DETAILS (
   id BIGINT NOT NULL auto_increment,
   secret	varchar(255),
   username	varchar(255),

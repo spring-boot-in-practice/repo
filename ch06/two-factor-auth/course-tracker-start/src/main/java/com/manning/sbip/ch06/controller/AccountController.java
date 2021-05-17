@@ -10,13 +10,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@ControllerAdvice
 @RequiredArgsConstructor
 public class AccountController {
 
@@ -26,7 +24,6 @@ public class AccountController {
     public String getAccount(Model model, @AuthenticationPrincipal CustomUser customUser) {
         if(customUser != null && !customUser.isTotpEnabled()) {
             model.addAttribute("totpEnabled", customUser.isTotpEnabled());
-            model.addAttribute("configureTotp", true);
         }
         else {
             model.addAttribute("totpEnabled", true);
@@ -41,7 +38,6 @@ public class AccountController {
         if(!isTotp) {
             model.addAttribute("qrUrl", totpService.generateAuthenticationQrUrl(username));
             model.addAttribute("code", new TotpCode());
-            return  "account";
         }
         model.addAttribute("totpEnabled", true);
         return "account";
@@ -59,11 +55,10 @@ public class AccountController {
     }
 
     @ExceptionHandler(InvalidVerificationCode.class)
-    public String handleInvalidTOTPVerificationCode(InvalidVerificationCode ex, Model model, @AuthenticationPrincipal CustomUser user) {
+    public String handleInvalidTOTPVerificationCode(Model model, @AuthenticationPrincipal CustomUser user) {
         boolean userHasTotpEnabled = user.isTotpEnabled();
         model.addAttribute("totpEnabled",userHasTotpEnabled);
         model.addAttribute("confirmError",true);
-        model.addAttribute("code", new TotpCode());
         return "account";
     }
 }
