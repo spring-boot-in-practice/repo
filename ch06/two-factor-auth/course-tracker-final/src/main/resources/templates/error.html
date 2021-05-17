@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Login</title>
+<title>Error</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
 <script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
@@ -37,29 +37,8 @@
 	<div class="container my-5">
 		<div class="row">
 			<div class="col-md-3"></div>
-			<div class="col-md-6">
-				<h2 class="mb-1 text-center">Login</h2>
-			</div>
-			<div class="col-md-3"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-6">
-				<div th:if="${loginError}" class="alert alert-danger">Wrong Username or Password</div>
-				<div th:if="${loginVerified}" class="alert alert-success">Account has been verified. Please sign-in</div>
-				<div th:if="${loginDisabled}" class="alert alert-danger">Account is not yet active. Please check your email</div>
-				<form th:action="@{/login}" method="post">
-					<div class="form-group">
-						<label for="username">Username</label>
-						<input type="text" class="form-control" name="username" placeholder="Enter Username" required autofocus>
-					</div>
-					<div class="form-group">
-						<label for="password">Password</label>
-						<input type="password" class="form-control" name="password" placeholder="Enter Password" required autofocus>
-					</div>
-					<button type="submit" class="btn btn-dark">Submit</button>
-					<a class="btn btn-success" href="#" th:href="@{/adduser}">Register</a>
-				</form>
+			<div class="col-md-6 bg-light text-danger text-center border rounded-top border-dark p-1">
+				<p class="mb-1" th:text="${error}"></p>
 			</div>
 			<div class="col-md-3"></div>
 		</div>

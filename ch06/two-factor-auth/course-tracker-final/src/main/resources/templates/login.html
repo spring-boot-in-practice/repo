@@ -1,43 +1,71 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<title>User Sign-in</title>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
-<link rel="stylesheet" type="text/css" href="../static/css/portfolio.css" th:href="@{/css/portfolio.css}" />
-<link rel="stylesheet" type="text/css" href="../static/css/login.css" th:href="@{/css/login.css}" />
 <script src="http://cdn.jsdelivr.net/webjars/bootstrap/4.1.0/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 <script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
 </head>
-
-
 <body>
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 class="text-center login-title">Sign-in to your portfolio</h1>
-            <p th:if="${loginError}" class="error">Wrong user, password or security pin</p>
-            <p th:if="${verified}" class="info">Your account has been verified!, Please sign-in</p>
-            <div class="account-wall">
-                <form class="form-signin" th:action="@{/login}" method="post">
-                <input type="text" name = "username" class="form-control" placeholder="Username" required autofocus>
-                <input type="password" name = "password" class="form-control" placeholder="Password" required>
-                <input type="password" name = "securityPin" class="form-control" placeholder="Security pin" required>
-                <button class="btn btn-lg btn-primary btn-block signup_btn" type="submit">
-                    Sign in</button>
-<!--                 <label class="checkbox pull-left"> -->
-<!--                     <input type="checkbox" value="remember-me"> -->
-<!--                     Remember me -->
-<!--                 </label> -->
-                </form>
-            </div>
-            <a href="/register" class="text-center new-account">Create an account </a>
-        </div>
-    </div>
-</div>
-
+	<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+		<a class="navbar-brand brand-text" href="#">
+			<img src="/images/logo.png" width="30" height="30" alt="logo">
+			Course Tracker
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-between" id="navbar-list">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#" th:href="@{/index}">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" th:href="@{/addcourse}">Add Course</a>
+				</li>
+			</ul>
+			<!--ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#" th:href="@{/adduser}">Register</a>
+				</li>
+			</ul-->
+		</div>
+	</nav>
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 bg-dark text-light text-center border rounded-top border-bottom-0 border-dark p-1">
+				<h5 class="mb-1 text-center">Login</h5>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 border rounded-bottom border-dark p-3">
+				<div th:if="${loginError}" class="alert alert-danger">Wrong Username or Password</div>
+				<div th:if="${loginVerified}" class="alert alert-success">Account has been verified. Please sign-in</div>
+				<div th:if="${loginDisabled}" class="alert alert-danger">Account is not yet active. Please check your email</div>
+				<form th:action="@{/login}" method="post">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input type="text" class="form-control" name="username" placeholder="Enter Username" required autofocus>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="password" placeholder="Enter Password" required autofocus>
+					</div>
+					
+					<div class="text-center mt-1">
+						<button type="submit" class="btn btn-dark">Submit</button>
+						<a class="btn btn-success" href="#" th:href="@{/adduser}">Register</a>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
 </body>
 </html>

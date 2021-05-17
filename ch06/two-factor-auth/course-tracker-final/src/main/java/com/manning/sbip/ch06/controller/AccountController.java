@@ -20,50 +20,60 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequiredArgsConstructor
 public class AccountController {
 
-    private final TotpService totpService;
+	private final TotpService totpService;
 
-    @GetMapping("/account")
-    public String getAccount(Model model, @AuthenticationPrincipal CustomUser customUser) {
-        if(customUser != null && !customUser.isTotpEnabled()) {
-            model.addAttribute("totpEnabled", customUser.isTotpEnabled());
-            model.addAttribute("configureTotp", true);
-        }
-        else {
-            model.addAttribute("totpEnabled", true);
-        }
-        return "account";
-    }
+	@GetMapping("/account")
+	public String getAccount(Model model, @AuthenticationPrincipal CustomUser customUser) {
+		if (customUser != null && !customUser.isTotpEnabled()) {
+			model.addAttribute("totpEnabled", customUser.isTotpEnabled());
+			model.addAttribute("configureTotp", true);
+		} else {
+			model.addAttribute("totpEnabled", true);
+		}
+		return "account";
+	}
 
-    @GetMapping("/setup-totp")
-    public String getGoogleAuthenticatorQrUrl(Model model, @AuthenticationPrincipal CustomUser customUser) {
-        String username = customUser.getUsername();
-        boolean isTotp = customUser.isTotpEnabled();
-        if(!isTotp) {
-            model.addAttribute("qrUrl", totpService.generateAuthenticationQrUrl(username));
-            model.addAttribute("code", new TotpCode());
-            return  "account";
-        }
-        model.addAttribute("totpEnabled", true);
-        return "account";
-    }
+	@GetMapping("/setup-totp")
+	public String getGoogleAuthenticatorQrUrl(Model model, @AuthenticationPrincipal CustomUser customUser) {
+		String username = customUser.getUsername();
+		boolean isTotp = customUser.isTotpEnabled();
+		if (!isTotp) {
+			model.addAttribute("qrUrl", totpService.generateAuthenticationQrUrl(username));
+			model.addAttribute("code", new TotpCode());
+			return "account";
+		}
+		model.addAttribute("totpEnabled", true);
+		return "account";
+	}
 
-    @PostMapping("/confirm-totp")
-    public String confirmGoogleAuthenticatorSetup(Model model, @AuthenticationPrincipal CustomUser customUser, TotpCode totpCode) {
-        boolean isTotp = customUser.isTotpEnabled();
-        if(!isTotp) {
-            totpService.enableTotpForUser(customUser.getUsername(), Integer.valueOf(totpCode.getCode()));
-            model.addAttribute("totpEnabled", true);
-        }
-        customUser.setTotpEnabled(true);
-        return "redirect:/logout";
-    }
+	@PostMapping("/confirm-totp")
+	public String confirmGoogleAuthenticatorSetup(Model model, @AuthenticationPrincipal CustomUser customUser,
+			TotpCode totpCode) {
+		boolean isTotp = customUser.isTotpEnabled();
+		if (!isTotp) {
+			try {
+				totpService.enableTotpForUser(customUser.getUsername(), Integer.valueOf(totpCode.getCode()));
+			} catch (InvalidVerificationCode ex) {
+				model.addAttribute("totpEnabled", customUser.isTotpEnabled());
+				model.addAttribute("confirmError", true);
+				model.addAttribute("configureTotp", false);
+				model.addAttribute("code", new TotpCode());
+				return "account";
+			}
 
-    @ExceptionHandler(InvalidVerificationCode.class)
-    public String handleInvalidTOTPVerificationCode(InvalidVerificationCode ex, Model model, @AuthenticationPrincipal CustomUser user) {
-        boolean userHasTotpEnabled = user.isTotpEnabled();
-        model.addAttribute("totpEnabled",userHasTotpEnabled);
-        model.addAttribute("confirmError",true);
-        model.addAttribute("code", new TotpCode());
-        return "account";
-    }
+			model.addAttribute("totpEnabled", true);
+		}
+		customUser.setTotpEnabled(true);
+		return "redirect:/logout";
+	}
+
+	@ExceptionHandler(InvalidVerificationCode.class)
+	public String handleInvalidTOTPVerificationCode(InvalidVerificationCode ex, Model model,
+			@AuthenticationPrincipal CustomUser user) {
+		boolean userHasTotpEnabled = user.isTotpEnabled();
+		model.addAttribute("totpEnabled", userHasTotpEnabled);
+		model.addAttribute("confirmError", true);
+		model.addAttribute("code", new TotpCode());
+		return "account";
+	}
 }

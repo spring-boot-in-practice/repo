@@ -35,7 +35,6 @@ public class RegistrationController {
         if(result.hasErrors()) {
             return "add-user";
         }
-        user.setVerified(true);
         userService.createUser(user);
         return "redirect:adduser?success";
     }

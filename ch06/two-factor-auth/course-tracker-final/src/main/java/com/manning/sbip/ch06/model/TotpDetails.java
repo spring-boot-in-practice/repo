@@ -15,15 +15,12 @@ public class TotpDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String username;
     private String secret;
     
     public TotpDetails(String username, String secret) {
     	this.username = username;
     	this.secret = secret;
-    }
-    
-    
-    
+    } 
 }

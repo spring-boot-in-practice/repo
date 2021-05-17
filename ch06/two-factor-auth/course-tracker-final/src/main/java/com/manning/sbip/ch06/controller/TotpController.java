@@ -12,11 +12,6 @@ public class TotpController {
         return "totp-login";
     }
 
-    @GetMapping("/totp-confirmation")
-    public String totpConfirmation(){
-        return "totp-confirmation";
-    }
-
     @GetMapping("/totp-login-error")
     public String totpLoginError(Model model){
         model.addAttribute("loginError", true);

@@ -16,7 +16,7 @@ public class GoogleRecaptchaService {
 	private static final String VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify"
 			+ "?secret={secret}&remoteip={remoteip}&response={response}";
 	private final RestTemplate restTemplate;
-	private final String secretKey = "6LfenfoZAAAAAIWl7OTaeWsW1PMpmNmFh6AYuu8x";
+	private final String secretKey = "<Your Secret Key>";
 	
 	public GoogleRecaptchaService(RestTemplate restTemplate) {
 		this.restTemplate=restTemplate;

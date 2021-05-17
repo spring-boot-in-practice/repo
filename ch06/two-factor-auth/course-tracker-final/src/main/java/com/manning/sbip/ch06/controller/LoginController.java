@@ -9,18 +9,18 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login() {
-        return "loginPage";
+        return "login";
     }
 
     @GetMapping("/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
-        return "loginPage";
+        return "login";
     }
 
     @GetMapping("/login-verified")
     public String loginVerified(Model model) {
         model.addAttribute("verified", true);
-        return "loginPage";
+        return "login";
     }
 }

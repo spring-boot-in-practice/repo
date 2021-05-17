@@ -14,10 +14,6 @@ create table CT_USERS (
     email varchar(50),
     username varchar(50),
     password varchar(100),
-	confirm_password varchar(100),
-    verified smallint(1),
-	security_pin varchar(100),
-	confirm_security_pin varchar(100),
 	totp_enabled smallint(1),
     PRIMARY KEY (id)
 );

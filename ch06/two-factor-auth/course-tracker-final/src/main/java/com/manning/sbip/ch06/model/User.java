@@ -32,8 +32,6 @@ public class User {
     @NotEmpty(message = "Password can't be empty")
     private String password;
 
-    private boolean verified;
-
     @NotNull
     private boolean totpEnabled;
 }
