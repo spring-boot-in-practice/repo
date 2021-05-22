@@ -75,7 +75,25 @@ jobs:
           ch05/jdbc-default-authentication/course-tracker-start,
           ch05/jdbc-default-authentication/course-tracker-final,
           ch05/ldap-authentication/course-tracker-start,
-          ch05/ldap-authentication/course-tracker-final
+          ch05/ldap-authentication/course-tracker-final,
+          ch06/email-verification/course-tracker-start,
+          ch06/email-verification/course-tracker-final,
+          ch06/google-recaptcha/course-tracker-start,
+          ch06/google-recaptcha/course-tracker-final,
+          ch06/implementing-https/course-tracker-start,
+          ch06/implementing-https/course-tracker-final,
+          ch06/implementing-vault/course-tracker-start,
+          ch06/implementing-vault/course-tracker-final,
+          ch06/login-attempt/course-tracker-start,
+          ch06/login-attempt/course-tracker-final,
+          ch06/remember-me/course-tracker-start,
+          ch06/remember-me/course-tracker-final,
+          ch06/sigin-with-google/course-tracker-start,
+          ch06/sigin-with-google/course-tracker-final,
+          ch06/two-factor-auth/course-tracker-start,
+          ch06/two-factor-auth/course-tracker-final,
+          ch06/user-registration/course-tracker-start,
+          ch06/user-registration/course-tracker-final
         ]
     steps:
       - name: Checkout repository
