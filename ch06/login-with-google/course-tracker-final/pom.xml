@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.manning.sbip.ch06</groupId>
-	<artifactId>course-tracker-sigin-with-google-final</artifactId>
+	<artifactId>course-tracker-login-with-google-final</artifactId>
 	<version>1.0.0</version>
-	<name>course-tracker-sigin-with-google-final</name>
+	<name>course-tracker-login-with-google-final</name>
 	<description>Spring Boot application for Chapter 06</description>
 
 	<properties>
