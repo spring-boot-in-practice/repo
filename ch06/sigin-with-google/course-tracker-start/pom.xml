@@ -8,10 +8,10 @@
         <version>2.4.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.manning.sbip.ch04</groupId>
-    <artifactId>course-tracker-email-verification-start</artifactId>
+    <groupId>com.manning.sbip.ch06</groupId>
+    <artifactId>course-tracker-sigin-with-google-start</artifactId>
     <version>1.0.0</version>
-    <name>course-tracker-email-verification-start</name>
+    <name>course-tracker-sigin-with-google-start</name>
     <description>Spring Boot application for Chapter 06</description>
 
     <properties>
