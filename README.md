@@ -42,6 +42,8 @@ Maven | Gradle
 
 - Chapter 01 Booting Spring Boot
 - Chapter 02 Spring Boot Common Tasks
+- Chapter 03 Database Access with Spring Data
+- Chapter 04 Spring Boot - Autoconfiguration and Actuator
 
 - Appendix A Generating and Building Spring Boot projects
 - Appendix B Spring MVC and Thymeleaf Template Engine
