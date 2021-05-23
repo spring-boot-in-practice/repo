@@ -10,13 +10,14 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.manning.sbip.ch06</groupId>
-	<artifactId>course-tracker-implementing-vault-start</artifactId>
+	<artifactId>course-tracker-implementing-vault-final</artifactId>
 	<version>1.0.0</version>
-	<name>course-tracker-implementing-vault-start</name>
+	<name>course-tracker-implementing-vault-final</name>
 	<description>Spring Boot application for Chapter 06</description>
 
 	<properties>
 		<java.version>15</java.version>
+		<spring-cloud.version>2020.0.1</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -72,8 +73,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-vault-config</artifactId>
+		</dependency>
 	</dependencies>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
