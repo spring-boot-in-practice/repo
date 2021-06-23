@@ -1,0 +1,20 @@
+=== Create a new Course
+Create a new Course
+
+==== Sample Request
+include::{snippets}/course/create-course/http-request.adoc[]
+
+==== Sample Response
+include::{snippets}/course/create-course/http-response.adoc[]
+
+==== CURL sample
+include::{snippets}/course/create-course/curl-request.adoc[]
+
+==== HTTPie sample
+include::{snippets}/course/create-course/httpie-request.adoc[]
+
+==== Request Body
+include::{snippets}/course/create-course/request-body.adoc[]
+
+==== Response Body
+include::{snippets}/course/create-course/response-body.adoc[]
