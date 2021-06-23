@@ -50,7 +50,7 @@
 		<div class="row py-5">
 			<div class="col-md-3"></div>
 			<div class="col-md-6 rounded border border-dark py-3 pl-5">
-				<p class="text-success">You've two-factor authentication enabled. Enter the verification code from the Google Authernticator app</p>
+				<p class="text-success">You've two-factor authentication enabled. Enter the verification code from the Google Authenticator app</p>
 				<p th:if="${loginError}" class="text-center text-danger">Incorrect OTP</p>
 
 				<form th:action="@{/login}" method="post">
