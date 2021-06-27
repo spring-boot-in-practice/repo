@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.manning.sbip.ch07</groupId>
-	<artifactId>documenting-with-swagger</artifactId>
+	<artifactId>documenting-with-openapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>documenting-with-swagger</name>
+	<name>documenting-with-openapi</name>
 	<description>Course Tracker REST API</description>
 	<properties>
 		<java.version>1.8</java.version>

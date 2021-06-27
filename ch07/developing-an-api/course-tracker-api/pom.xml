@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.manning.sbip.ch07</groupId>
-	<artifactId>course-tracker-api</artifactId>
+	<artifactId>developing-an-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>course-tracker-api</name>
+	<name>developing-an-api</name>
 	<description>Course Tracker REST API</description>
 	<properties>
 		<java.version>1.8</java.version>

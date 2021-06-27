@@ -1,0 +1,35 @@
+[[create_course]]
+=== Create Course
+When creating a new course through this API endpoint, following request body and response can be expected.
+
+[[create_course]]
+==== Request
+include::{snippets}/create-course/http-request.adoc[]
+
+[[create_course_success_request_body]]
+===== Request Body
+include::{snippets}/create-course/request-body.adoc[]
+
+[[create_course_success_request_fields]]
+===== Request Fields
+include::{snippets}/create-course/request-fields.adoc[]
+
+[[create_course_success_response]]
+==== Response
+include::{snippets}/create-course/http-response.adoc[]
+
+[[create_course_success_response_body]]
+===== Response body
+include::{snippets}/create-course/response-body.adoc[]
+
+[[create_course_success_response_headers]]
+===== Response Fields
+include::{snippets}/create-course/response-fields.adoc[]
+
+[[create_coursel_success_curl]]
+==== cURL
+include::{snippets}/create-course/curl-request.adoc[]
+
+[[create_coursel_success_httpie]]
+==== HTTPie
+include::{snippets}/create-course/httpie-request.adoc[]

@@ -9,9 +9,9 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "COURSES")
-@Data
 public class Course {
 
 	@Id
