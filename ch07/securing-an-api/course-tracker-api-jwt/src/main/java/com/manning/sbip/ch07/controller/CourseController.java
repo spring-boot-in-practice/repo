@@ -44,14 +44,14 @@ public class CourseController {
 	}
 	
 	@PostMapping
-	//@PreAuthorize("hasAuthority('SCOPE_course:write')")
+	@PreAuthorize("hasAuthority('SCOPE_course:write')")
 	public Course createCourse(@RequestBody String name, @AuthenticationPrincipal Jwt jwt) {
 		Course course = new Course(null, name, jwt.getClaim("user_name"));
 		return courseRepository.save(course);
 	}
 	
-	//@PutMapping("{id}")
-	//@PreAuthorize("hasAuthority('SCOPE_course:write')")
+	@PutMapping("{id}")
+	@PreAuthorize("hasAuthority('SCOPE_course:write')")
 	public Optional<Course> updateCourse(@PathVariable("id") long courseId, @RequestBody String name) {
 		courseRepository.update(courseId, name);
 		return getCourseById(courseId);

@@ -11,9 +11,9 @@ import com.manning.sbip.ch07.repository.CourseRepository;
 
 @Service
 public class CourseServiceImpl implements CourseService {
-	
+
 	private CourseRepository courseRepository;
-	
+
 	@Autowired
 	public CourseServiceImpl(CourseRepository courseRepository) {
 		this.courseRepository = courseRepository;
@@ -41,18 +41,13 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	public Course updateCourse(long courseId, Course course) {
-		
-		Optional<Course> optionalCourse = courseRepository.findById(courseId);
-		if(optionalCourse.isPresent()) {
-			Course dbCourse = optionalCourse.get();
-			dbCourse.setName(course.getName());
-			dbCourse.setCategory(course.getCategory());
-			dbCourse.setDescription(course.getDescription());
-			dbCourse.setRating(course.getRating());
-			
-			return courseRepository.save(dbCourse);
-		}
-		throw new CourseNotFoundException(String.format("No course with id %s is available", courseId));
+		Course existingCourse = courseRepository.findById(courseId)
+				.orElseThrow(() -> new CourseNotFoundException("No course with id %s is available" + courseId));
+		existingCourse.setName(course.getName());
+		existingCourse.setCategory(course.getCategory());
+		existingCourse.setDescription(course.getDescription());
+		existingCourse.setRating(course.getRating());
+		return courseRepository.save(existingCourse);
 	}
 
 	@Override
@@ -62,11 +57,8 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	public void deleteCourseById(long courseId) {
-		Optional<Course> optionalCourse = courseRepository.findById(courseId);
-		if(optionalCourse.isPresent()) {
-			courseRepository.deleteById(courseId);
-		}
-		throw new CourseNotFoundException(String.format("No course with id %s is available", courseId));
+		courseRepository.findById(courseId).orElseThrow(() -> new CourseNotFoundException("No course with id %s is available" + courseId));
+		courseRepository.deleteById(courseId);
 	}
 
 }

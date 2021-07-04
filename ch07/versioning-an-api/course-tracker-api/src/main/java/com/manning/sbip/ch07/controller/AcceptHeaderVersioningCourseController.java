@@ -29,25 +29,25 @@ public class AcceptHeaderVersioningCourseController {
 		this.modernCourseRepository = modernCourseRepository;
 	}
 
-	@GetMapping(produces = "application/vnd.company.app-v1+json")
+	@GetMapping(produces = "application/vnd.sbip.app-v1+json")
 	@ResponseStatus(code = HttpStatus.OK)
 	public Iterable<Course> getAllLegacyCourses() {
 		return courseService.getCourses();
 	}
 
-	@PostMapping(produces = "application/vnd.company.app-v1+json")
+	@PostMapping(produces = "application/vnd.sbip.app-v1+json")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public Course createCourse(@Valid @RequestBody Course course) {
 		return courseService.createCourse(course);
 	}
 
-	@GetMapping(produces = "application/vnd.company.app-v2+json")
+	@GetMapping(produces = "application/vnd.sbip.app-v2+json")
 	@ResponseStatus(code = HttpStatus.OK)
 	public Iterable<ModernCourse> getAllModernCourses() {
 		return modernCourseRepository.findAll();
 	}
 
-	@PostMapping(produces = "application/vnd.company.app-v2+json")
+	@PostMapping(produces = "application/vnd.sbip.app-v2+json")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public ModernCourse createCourse(@Valid @RequestBody ModernCourse modernCourse) {
 		return modernCourseRepository.save(modernCourse);

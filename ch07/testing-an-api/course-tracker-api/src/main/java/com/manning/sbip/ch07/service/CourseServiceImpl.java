@@ -1,18 +1,17 @@
 package com.manning.sbip.ch07.service;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.manning.sbip.ch07.exception.CourseNotFoundException;
 import com.manning.sbip.ch07.model.Course;
 import com.manning.sbip.ch07.repository.CourseRepository;
 
 @Service
 public class CourseServiceImpl implements CourseService {
-	
+
 	private CourseRepository courseRepository;
-	
+
 	@Autowired
 	public CourseServiceImpl(CourseRepository courseRepository) {
 		this.courseRepository = courseRepository;
@@ -24,8 +23,9 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public Optional<Course> getCourseById(long courseId) {
-		return courseRepository.findById(courseId);
+	public Course getCourseById(long courseId) {
+		return courseRepository.findById(courseId)
+				.orElseThrow(() -> new CourseNotFoundException("No course with id %s is available" + courseId));
 	}
 
 	@Override
@@ -39,19 +39,14 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public Course updateCourse(Long courseId, Course course) {
-
-		Optional<Course> optionalCourse = courseRepository.findById(courseId);
-		if(optionalCourse.isPresent()) {
-			Course dbCourse = optionalCourse.get();
-			dbCourse.setName(course.getName());
-			dbCourse.setCategory(course.getCategory());
-			dbCourse.setDescription(course.getDescription());
-			dbCourse.setRating(course.getRating());
-			
-			return courseRepository.save(dbCourse);
-		}
-		return null;
+	public Course updateCourse(long courseId, Course course) {
+		Course existingCourse = courseRepository.findById(courseId)
+				.orElseThrow(() -> new CourseNotFoundException("No course with id %s is available" + courseId));
+		existingCourse.setName(course.getName());
+		existingCourse.setCategory(course.getCategory());
+		existingCourse.setDescription(course.getDescription());
+		existingCourse.setRating(course.getRating());
+		return courseRepository.save(existingCourse);
 	}
 
 	@Override
@@ -61,6 +56,8 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	public void deleteCourseById(long courseId) {
+		courseRepository.findById(courseId)
+				.orElseThrow(() -> new CourseNotFoundException("No course with id %s is available" + courseId));
 		courseRepository.deleteById(courseId);
 	}
 
