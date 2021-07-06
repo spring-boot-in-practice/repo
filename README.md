@@ -29,14 +29,14 @@ Spring Boot in Practice is full of practical recipes for troubleshooting common 
 
 The code samples in the book use Apache Maven as the build tool. If you prefer Gradle over Maven, here's a table mapping Maven commands to Gradle:
 
-Maven | Gradle
------- | ------
-`./mvnw clean` | `./gradlew clean`
-`./mvnw install` | `./gradlew build`
-`./mvnw test` | `./gradlew test`
-`./mvnw repackage` | `./gradlew bootJar`
-`./mvnw spring-boot:run` | `./gradlew bootRun`
-`./mvnw spring-boot:build-image` | `./gradlew bootBuildImage`
+| Maven                            | Gradle                     |
+| -------------------------------- | -------------------------- |
+| `./mvnw clean`                   | `./gradlew clean`          |
+| `./mvnw install`                 | `./gradlew build`          |
+| `./mvnw test`                    | `./gradlew test`           |
+| `./mvnw repackage`               | `./gradlew bootJar`        |
+| `./mvnw spring-boot:run`         | `./gradlew bootRun`        |
+| `./mvnw spring-boot:build-image` | `./gradlew bootBuildImage` |
 
 ## Chapters
 
@@ -44,14 +44,17 @@ Maven | Gradle
 - Chapter 02 Spring Boot Common Tasks
 - Chapter 03 Database Access with Spring Data
 - Chapter 04 Spring Boot - Autoconfiguration and Actuator
-- Chapter 05 - Chapter 11 - In Progress
--
+- Chapter 05 Securing Spring Boot Applications
+- Chapter 06 Implementing Additional Security with Spring Security
+- Chapter 07 Developing RESTful Web Services with Spring Boot
+- Chapter 08-10 - In Progress
 - Appendix A Generating and Building Spring Boot projects
 - Appendix B Spring MVC and Thymeleaf Template Engine
 
 ## Book forum
+
 Feel free to submit questions, feedback, or errata to the forum dedicated to "Spring Boot in Practice": https://livebook.manning.com/book/spring-boot-in-practice/.
 
 ## Contact the author
-You are always welcome to contact me for questions, feedback, or suggestions. Feel free to reach out to me on Twitter, LinkedIn, or here on GitHub.
 
+You are always welcome to contact me for questions, feedback, or suggestions. Feel free to reach out to me on Twitter, LinkedIn, or here on GitHub.
