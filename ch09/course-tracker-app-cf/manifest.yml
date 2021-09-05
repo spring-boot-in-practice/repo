@@ -1,0 +1,8 @@
+applications:
+- name: course-tracker-app-cf
+  instances: 1
+  memory: 1024M
+  path: target/course-tracker-app-cf-1.0.0.jar
+  random-route: true
+  buildpacks:
+  - java_buildpack

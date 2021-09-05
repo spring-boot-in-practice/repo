@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.manning.sbip.ch09</groupId>
-	<artifactId>course-tracker-app-war</artifactId>
+	<artifactId>course-tracker-app-openshift</artifactId>
 	<version>1.0.0</version>
-	<packaging>war</packaging>
-	<name>course-tracker-app-war</name>
+	<packaging>jar</packaging>
+	<name>course-tracker-app-openshift</name>
 	<description>Spring Boot application for Chapter 09</description>
 
 	<properties>
@@ -24,17 +24,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>ch.qos.logback</groupId>
-					<artifactId>logback-classic</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
