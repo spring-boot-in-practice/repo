@@ -1,0 +1,26 @@
+type Query {
+    courses : [Course]
+    coursesByCategory (category: String) : [Course]!
+    reviews (courseId: Int) : [Review]!
+}
+
+type Course {
+    id: ID
+    name: String
+    category: String
+    description: String
+    reviews: [Review]!
+}
+
+type Review {
+    id: ID,
+    courseId: Int,
+    reviewerName: String
+    rating: Int,
+    comment: String
+}
+
+type Mutation {
+    addCourse(name: String, category: String, description: String) : Course
+    addReview(courseId: Int, reviewerName: String, rating: Int, comment: String) : Review
+}

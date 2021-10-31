@@ -5,6 +5,7 @@ import org.springframework.context.support.GenericApplicationContext
 import org.springframework.context.support.beans
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.config.annotation.web.builders.WebSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.config.web.servlet.invoke
@@ -44,7 +45,4 @@ class KotlinSecurityConfiguration : WebSecurityConfigurerAdapter(), ApplicationC
     override fun initialize(applicationContext: GenericApplicationContext) {
         beans.initialize(applicationContext)
     }
-
-
 }
-

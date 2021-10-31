@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping
 class LoginController {
 
     @GetMapping("/login")
-    fun login(): String? {
+    fun login(): String {
         return "login"
     }
 
     @GetMapping("/login-error")
-    fun loginError(model: Model): String? {
+    fun loginError(model: Model): String {
         model["loginError"] = true
         return "login"
     }

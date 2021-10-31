@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Tracker Review Subscription</title>
+    <script type="text/javascript" src="https://unpkg.com/graphql-ws/umd/graphql-ws.min.js"></script>
+    <script>
+        class Graphql {
+            constructor(url) {
+                this.client = graphqlWs.createClient({url: url})
+            }
+
+            subscribe(query, callback) {
+                this.client.subscribe(
+                    {query: query},
+                    {
+                        next: callback,
+                        error: (err) => console.error('Error occurred', err),
+                        complete: () => console.log('Subscription completed'),
+                    },
+                );
+            }
+
+            async query(queryString) {
+                return await new Promise((resolve, reject) => {
+                    let result;
+                    this.client.subscribe(
+                        {
+                            query: queryString
+                        },
+                        {
+                            next: (data) => (result = data),
+                            error: reject,
+                            complete: () => resolve(result)
+                        }
+                    );
+                })
+            }
+        }
+
+        class CourseReviewSubscription {
+
+            constructor() {
+                this.client = new Graphql('ws://localhost:8080/graphql')
+            }
+
+            async getCourses() {
+                const q = `{ courses { id, name } }`
+                return (await this.client.query(q)) ['data']['courses']
+            }
+
+            async addCourse(name, category, description) {
+                const q =
+                    `mutation {
+                        addCourse(name: "${name}", category: "${category}", description: "${description}") {
+                          name
+                        }
+                    }`
+                return (await this.client.query(q)) ['data']['addCourse']
+            }
+
+            async addReview(courseId, reviewerName, rating, comment) {
+                const q =
+                    `mutation {
+                        addReview(courseId: ${courseId}, reviewerName: "${reviewerName}", rating: ${rating}, comment: "${comment}") {
+                          id,
+                          reviewerName,
+                          comment,
+                          rating
+                        }
+                    }`
+                return (await this.client.query(q)) ['data']['addReview']
+            }
+
+            subscribeToCourseReviews(courseId, callback) {
+                const q = `
+                    subscription {
+                        reviewEvents(courseId: ${courseId}) {
+                            id,
+                            reviewerName,
+                            comment,
+                            rating
+                        }
+                    }
+                `
+
+                this.client.subscribe(q, (next) => {
+                    const result = next ['data']['reviewEvents']
+                    callback(result)
+                });
+            }
+        }
+
+        window.addEventListener('load', async () => {
+            const crs = new CourseReviewSubscription();
+            await crs.addReview(1, 'Leena', 5, 'A 5-star course')
+            await crs.subscribeToCourseReviews(1, (event) => {
+                console.log(JSON.stringify({reviewId: event.id, reviewerName: event.reviewerName, comment: event.comment, rating: event.rating}));
+            })
+        });
+
+    </script>
+</head>
+<body>
+</body>
+</html>

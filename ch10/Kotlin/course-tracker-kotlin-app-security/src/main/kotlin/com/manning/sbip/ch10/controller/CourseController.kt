@@ -11,7 +11,7 @@ import java.util.*
 import javax.validation.Valid
 
 @Controller
-class CourseController(var courseService: CourseService) {
+class CourseController(private val courseService: CourseService) {
 
     @GetMapping("/")
     fun index(): String {
@@ -43,8 +43,7 @@ class CourseController(var courseService: CourseService) {
 
     @GetMapping("/update/{id}")
     fun showUpdateCourseForm(@PathVariable("id") id: Long, model: Model): String {
-        model["course"] = courseService.findCourseById(id)?.get()
-        //model.addAttribute("course", courseService.findCourseById(id)?.get())
+        model["course"] = courseService.findCourseById(id)
         return "update-course"
     }
 
@@ -54,9 +53,8 @@ class CourseController(var courseService: CourseService) {
             course.id = id
             return "update-course"
         }
-        courseService.updateCourse(course)
+        courseService.updateCourse(id, course)
         model["courses"] = courseService.findAllCourses()
-        //model.addAttribute("courses", courseService.findAllCourses())
         return "redirect:/index"
     }
 
@@ -64,11 +62,6 @@ class CourseController(var courseService: CourseService) {
     fun deleteCourse(@PathVariable("id") id: Long, model: Model): String {
         courseService.deleteCourseById(id)
         model["courses"] = courseService.findAllCourses()
-        //model.addAttribute("courses", courseService.findAllCourses())
         return "redirect:/index"
-    }
-
-    init {
-        this.courseService = courseService
     }
 }
