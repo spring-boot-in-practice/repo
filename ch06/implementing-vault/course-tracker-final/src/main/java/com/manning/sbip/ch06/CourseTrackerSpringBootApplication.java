@@ -22,7 +22,6 @@ public class CourseTrackerSpringBootApplication {
 
 	@Bean
 	public ServletWebServerFactory servletContainer() {
-		System.out.println("Myapp: "+myApp);
 		TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
 			@Override
 			protected void postProcessContext(Context context) {
