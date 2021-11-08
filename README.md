@@ -21,7 +21,7 @@ In Spring Boot in Practice you will learn:
 - Reactive application development and reactive data access with WebSocket and RSocket
 - Deploying Spring Boot applications on Kubernetes and major cloud platforms
 - Implementing containerization in a Spring Boot application
-- Using Spring Boot with Kotlin and GraalVM
+- Using Spring Boot with Kotlin, GraalVM and GraphQL
 
 Spring Boot in Practice is full of practical recipes for troubleshooting common development problems with Spring Boot. I have spent years building applications with Spring and share my extensive experience in this focused guide. You’ll master Spring Data, Spring Security, and other Spring-centric solutions for the common business problems you face every day as a software developer.
 
@@ -47,7 +47,9 @@ The code samples in the book use Apache Maven as the build tool. If you prefer G
 - Chapter 05 Securing Spring Boot Applications
 - Chapter 06 Implementing Additional Security with Spring Security
 - Chapter 07 Developing RESTful Web Services with Spring Boot
-- Chapter 08-10 - In Progress
+- Chapter 08 Reactive Spring Boot Application Development
+- Chapter 9 Deploying Spring Boot Applications
+- Chapter 10 Spring Boot with Kotlin, Native Image and GraphQL
 - Appendix A Generating and Building Spring Boot projects
 - Appendix B Spring MVC and Thymeleaf Template Engine
 
