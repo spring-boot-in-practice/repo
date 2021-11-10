@@ -14,7 +14,7 @@ public class DbConfiguration {
 	
 	@Override
 	public String toString() {
-		return "Username: "+env.getProperty("user") +", Password: "+env.getProperty("password");
+		return "User: "+env.getProperty("user") +", Password: "+env.getProperty("password");
 	}
 
 }

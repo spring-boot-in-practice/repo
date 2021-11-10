@@ -30,7 +30,7 @@ public class CourseController {
 	}
 
 	@GetMapping
-	//@PreAuthorize("hasAuthority('SCOPE_course:read')")
+	@PreAuthorize("hasAuthority('SCOPE_course:read')")
 	public Iterable<Course> getAllCourses(@AuthenticationPrincipal Jwt jwt) {
 		String author = jwt.getClaim("user_name");
 		return courseRepository.findByAuthor(author);

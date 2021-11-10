@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.manning.sbip.ch02</groupId>
-	<artifactId>property-sources</artifactId>
+	<artifactId>os-env-variables</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>property-sources</name>
+	<name>spring-application</name>
 	<description>Spring Boot Demo Application</description>
 
 	<properties>
@@ -23,7 +23,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

@@ -1,5 +1,5 @@
 name: Spring Boot in Practice CI
-on: [push]
+#on: [push]
 #  push:
 #    branches:
 #      -main
