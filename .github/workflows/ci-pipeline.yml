@@ -95,6 +95,25 @@ jobs:
             ch07/testing-an-api/course-tracker-api,
             ch07/versioning-an-api/course-tracker-api,
             ch07/documenting-with-openapi/course-tracker-api,
+            ch08/course-tracker-client-api,
+            ch08/reactive-annotated-controller,
+            ch08/reactive-functional-endpoints,
+            ch08/spring-boot-rsocket,
+            ch08/spring-boot-websocket,
+            ch09/course-tracker-app-cf,
+            ch09/course-tracker-app-dockerfile,
+            ch09/course-tracker-app-heroku,
+            ch09/course-tracker-app-jar,
+            ch09/course-tracker-app-openshift,
+            ch09/course-tracker-app-war,
+            ch09/course-tracker-app-war-mvn-plugin,
+            ch09/docker/course-tracker-app-builtin,
+            ch10/GraalVM/course-tracker-native-app,
+            ch10/GraphQL/course-tracker-graphql-api,
+            ch10/GraphQL/course-tracker-graphql-app,
+            ch10/Kotlin/course-tracker-kotlin-app,
+            ch10/Kotlin/course-tracker-kotlin-app-security,
+            ch10/Kotlin/course-tracker-kotlin-rest-api
           ]
     steps:
       - name: Checkout repository

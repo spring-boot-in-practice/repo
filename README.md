@@ -48,7 +48,7 @@ The code samples in the book use Apache Maven as the build tool. If you prefer G
 - Chapter 06 Implementing Additional Security with Spring Security
 - Chapter 07 Developing RESTful Web Services with Spring Boot
 - Chapter 08 Reactive Spring Boot Application Development
-- Chapter 9 Deploying Spring Boot Applications
+- Chapter 09 Deploying Spring Boot Applications
 - Chapter 10 Spring Boot with Kotlin, Native Image and GraphQL
 - Appendix A Generating and Building Spring Boot projects
 - Appendix B Spring MVC and Thymeleaf Template Engine

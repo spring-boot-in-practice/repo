@@ -1,16 +1,19 @@
 package com.manning.sbip.ch10.controller;
 
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.graphql.data.method.annotation.SchemaMapping;
+import org.springframework.stereotype.Controller;
+
 import com.manning.sbip.ch10.model.Course;
 import com.manning.sbip.ch10.model.Review;
 import com.manning.sbip.ch10.repository.CourseRepository;
 import com.manning.sbip.ch10.repository.ReviewRepository;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.graphql.data.method.annotation.*;
-import org.springframework.stereotype.Controller;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.time.Duration;
 
 @Controller
 @RequiredArgsConstructor
