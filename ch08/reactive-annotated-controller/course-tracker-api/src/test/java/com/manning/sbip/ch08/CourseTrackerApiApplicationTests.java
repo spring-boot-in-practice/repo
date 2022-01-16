@@ -1,4 +1,4 @@
-package com.manning.sbip.ch07;
+package com.manning.sbip.ch08;
 
 import java.util.List;
 
