@@ -42,7 +42,7 @@ public class CourseServiceImpl implements CourseService {
 	@Override
 	public Course updateCourse(long courseId, Course course) {
 		Course existingCourse = courseRepository.findById(courseId)
-				.orElseThrow(() -> new CourseNotFoundException("No course with id %s is available" + courseId));
+				.orElseThrow(() -> new CourseNotFoundException(String.format("No course with id %s is available", courseId)));
 		existingCourse.setName(course.getName());
 		existingCourse.setCategory(course.getCategory());
 		existingCourse.setDescription(course.getDescription());

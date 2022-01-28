@@ -15,7 +15,7 @@
 	<description>Spring Boot Actuator Info Endpoint</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
