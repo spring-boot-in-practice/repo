@@ -5,8 +5,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.6.3</version>
+        <relativePath/>
     </parent>
     <groupId>com.manning.sbip.ch05</groupId>
     <artifactId>course-tracker-http-basic-authentication-final</artifactId>
@@ -15,7 +15,7 @@
     <description>Spring Boot application for Chapter 05</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
