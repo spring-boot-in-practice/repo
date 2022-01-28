@@ -14,7 +14,7 @@
     <name>course-tracker-graphql-api-security</name>
     <description>Course Tracker GraphQL API</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
 
