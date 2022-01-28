@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.6</version>
+		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.manning.sbip.ch10</groupId>
@@ -14,9 +14,9 @@
 	<name>native</name>
 	<description>course-tracker-native-app</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<repackage.classifier/>
-		<spring-native.version>0.10.5</spring-native.version>
+		<spring-native.version>0.11.2</spring-native.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -102,7 +102,7 @@
 			<id>native</id>
 			<properties>
 				<repackage.classifier>exec</repackage.classifier>
-				<native-buildtools.version>0.9.4</native-buildtools.version>
+				<native-buildtools.version>0.9.9</native-buildtools.version>
 			</properties>
 			<dependencies>
 				<dependency>
