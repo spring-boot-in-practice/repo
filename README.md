@@ -1,5 +1,3 @@
-[![Spring Boot in Practice CI](https://github.com/spring-boot-in-practice/repo/actions/workflows/ci-pipeline.yml/badge.svg)](https://github.com/spring-boot-in-practice/repo/actions/workflows/ci-pipeline.yml)
-
 # Spring Boot in Practice
 
 <a href="https://www.manning.com/books/spring-boot-in-practice?utm_source=musib&utm_medium=affiliate&utm_campaign=book_musib_spring_3_16_21&a_aid=musib&a_bid=27d46a98"><img src="https://github.com/spring-boot-in-practice/repo/blob/main/metadata/BookCover.png" alt="The book cover of 'Spring Boot in Practice' by Somnath Musib" align="left" height="200px" /></a>
